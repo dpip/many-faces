@@ -11,8 +11,8 @@ import featured from './documents/featured';
 
 // import custom objects
 import customImage from './objects/customImage';
-import bodyText from './objects/bodyText';
-import exceprtText from './objects/exceprtText';
+import richText from './objects/richText';
+import normalText from './objects/normalText';
 
 export default createSchema({
   name: 'default',
@@ -25,7 +25,7 @@ export default createSchema({
 
     // objects
     customImage,
-    bodyText,
-    exceprtText,
+    richText,
+    normalText,
   ]),
 });
