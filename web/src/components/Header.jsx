@@ -1,14 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link } from 'gatsby';
 import { MdSearch, MdMenu, MdClose } from 'react-icons/md';
 import clsx from 'clsx';
 import { menu } from '../constants/menu';
+import { SearchModalContext } from '../context/searchModalContext';
 import HeaderStyles from '../styles/HeaderStyles';
 import Logo from './Logo';
 import ActionButton from './buttons/ActionButton';
 
 const Header = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const { openSearchModal } = useContext(SearchModalContext);
+
+  const handleSearchModalOpen = () => {
+    openSearchModal();
+  };
 
   const handleNavItemClick = () => {
     setIsNavOpen(!isNavOpen);
@@ -62,7 +68,13 @@ const Header = () => {
                   </li>
                 ))}
                 <li className="searchIcon">
-                  <div className="searchIcon__wrapper">
+                  <div
+                    className="searchIcon__wrapper"
+                    role="button"
+                    tabIndex={0}
+                    onClick={handleSearchModalOpen}
+                    onKeyDown={handleSearchModalOpen}
+                  >
                     <MdSearch />
                   </div>
                 </li>
