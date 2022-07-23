@@ -5,7 +5,7 @@ import { SearchModalStyles } from '../../styles/search/SearchModalStyles';
 import ActionButton from '../buttons/ActionButton';
 import SearchField from './SearchField';
 
-const searchModal = () => {
+const SearchModal = () => {
   const { isSearchModalOpen, closeSearchModal } =
     useContext(SearchModalContext);
   const [searchQuery, setSearchQuery] = useState('');
@@ -31,4 +31,4 @@ const searchModal = () => {
   );
 };
 
-export default searchModal;
+export default SearchModal;
