@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@sanity/client": "^3.4.1",
+    "@sanity/client": "^1.149.13",
     "bootstrap": "^4.5.0",
     "next": "12.3.1",
     "react": "18.2.0",
