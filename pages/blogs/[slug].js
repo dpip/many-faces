@@ -1,10 +1,9 @@
 import PageLayout from 'components/PageLayout';
 import BlogHeader from 'components/BlogHeader';
-import { Row, Col, ButtonGroup } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import { getAllBlogs, getBlogBySlug } from 'lib/api';
 
 const BlogDetail = ({ blog }) => {
-  console.log('blog data', blog);
   return (
     <PageLayout className="blog-detail-page">
       <Row>
