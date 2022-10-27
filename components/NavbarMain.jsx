@@ -14,7 +14,7 @@ const NavbarMain = () => {
       >
         <Navbar.Brand className="fj-navbar-brand">
           <Link href="/">
-            <a>Filip-Jerga</a>
+            <a>Many Faces</a>
           </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
