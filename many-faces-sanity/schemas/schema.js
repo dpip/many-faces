@@ -37,6 +37,9 @@ export default createSchema({
           name: 'title',
           type: 'string',
           title: 'Title',
+          validation: (Rule) => {
+            return Rule.required();
+          },
         },
         {
           name: 'subtitle',
@@ -52,17 +55,28 @@ export default createSchema({
           name: 'date',
           type: 'datetime',
           title: 'Date',
+          validation: (Rule) => {
+            return Rule.required();
+          },
         },
         {
           name: 'author',
           type: 'reference',
           title: 'Author',
           to: [{ type: 'author' }],
+          validation: (Rule) => {
+            return Rule.required();
+          },
         },
         {
           name: 'slug',
           type: 'slug',
           title: 'Slug',
+          validation: (Rule) => {
+            return Rule.required().error(
+              'Slugs dictate the blog url name split with hyphens, ex. "my-blog-name"'
+            );
+          },
         },
       ],
     },
