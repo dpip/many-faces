@@ -73,6 +73,20 @@ export default createSchema({
               type: 'image',
               fields: [
                 {
+                  name: 'position',
+                  type: 'string',
+                  title: 'Position',
+                  options: {
+                    list: [
+                      { title: 'Center', value: 'center' },
+                      { title: 'Left', value: 'left' },
+                      { title: 'Right', value: 'right' },
+                    ],
+                    layout: 'radio',
+                    isHighlighted: true,
+                  },
+                },
+                {
                   name: 'alt',
                   type: 'text',
                   title: 'Description',
