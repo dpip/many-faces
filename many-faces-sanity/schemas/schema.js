@@ -73,9 +73,9 @@ export default createSchema({
               type: 'image',
               fields: [
                 {
+                  title: 'Position',
                   name: 'position',
                   type: 'string',
-                  title: 'Position',
                   options: {
                     list: [
                       { title: 'Center', value: 'center' },
