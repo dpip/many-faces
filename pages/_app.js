@@ -1,7 +1,10 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'styles/index.scss';
 
-import { library, config } from '@fortawesome/fontawesome-svg-core';
+const {
+  library,
+  config,
+} = require('@fortawesome/fontawesome-svg-core');
 import {
   faBorderAll,
   faList,
