@@ -11,17 +11,22 @@ import { getAllBlogs } from 'lib/api';
 
 const Home = ({ blogs }) => {
   const [filter, setFilter] = useState({
-    view: { list: 1 },
+    view: { list: 0 },
   });
   return (
     <PageLayout>
       <AuthorIntro />
-      <FilteringMenu onChange={() => {}} />
+      <FilteringMenu
+        onChange={(option, value) => {
+          setFilter({ ...filter, [option]: value });
+        }}
+        filter={filter}
+      />
       <hr />
       <Row className="mb-5">
         {blogs.map((blog) =>
           filter.view.list ? (
-            <Col md="10">
+            <Col key={`${blog.slug}-list`} md="10">
               <CardListItem />
             </Col>
           ) : (
