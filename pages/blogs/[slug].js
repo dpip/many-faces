@@ -7,7 +7,6 @@ import { urlFor } from 'lib/api';
 import BlogContent from 'components/BlogContent';
 
 const BlogDetail = ({ blog }) => {
-  debugger;
   return (
     <PageLayout className="blog-detail-page">
       <Row>

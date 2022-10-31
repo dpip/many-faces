@@ -1,8 +1,6 @@
 import { useState } from 'react';
-import useSWR from 'swr';
 
 import { Row, Col } from 'react-bootstrap';
-
 import PageLayout from 'components/PageLayout';
 import AuthorIntro from 'components/AuthorIntro';
 import CardItem from 'components/CardItem';
@@ -10,34 +8,37 @@ import CardListItem from 'components/CardListItem';
 import FilteringMenu from 'components/FilteringMenu';
 
 import { getAllBlogs } from 'lib/api';
+import { useGetBlogs } from 'actions';
 
-const fetcher = (url) => fetch(url).then((res) => res.json());
-
-const Home = ({ blogs }) => {
+export default function Home({ blogs: initialData }) {
   const [filter, setFilter] = useState({
     view: { list: 0 },
   });
 
-  const { data, error } = useSWR('/api/hello', fetcher);
+  const { data: blogs, error } = useGetBlogs(initialData);
+
   return (
     <PageLayout>
       <AuthorIntro />
       <FilteringMenu
+        filter={filter}
         onChange={(option, value) => {
           setFilter({ ...filter, [option]: value });
         }}
-        filter={filter}
       />
       <hr />
       <Row className="mb-5">
+        {/* <Col md="10">
+          <CardListItem />
+        </Col> */}
         {blogs.map((blog) =>
           filter.view.list ? (
-            <Col key={`${blog.slug}-list`} md="10">
+            <Col key={`${blog.slug}-list`} md="9">
               <CardListItem
+                author={blog.author}
                 title={blog.title}
                 subtitle={blog.subtitle}
                 date={blog.date}
-                author={blog.author}
                 link={{
                   href: '/blogs/[slug]',
                   as: `/blogs/${blog.slug}`,
@@ -47,11 +48,11 @@ const Home = ({ blogs }) => {
           ) : (
             <Col key={blog.slug} md="4">
               <CardItem
+                author={blog.author}
                 title={blog.title}
                 subtitle={blog.subtitle}
                 date={blog.date}
                 image={blog.coverImage}
-                author={blog.author}
                 link={{
                   href: '/blogs/[slug]',
                   as: `/blogs/${blog.slug}`,
@@ -63,15 +64,10 @@ const Home = ({ blogs }) => {
       </Row>
     </PageLayout>
   );
-};
+}
 
-export default Home;
-
-// The getStaticProps function is called during the build (build time)
-// Provides props to the page
-// Creates static page content
 export async function getStaticProps() {
-  const blogs = await getAllBlogs();
+  const blogs = await getAllBlogs({ offset: 0 });
   return {
     props: {
       blogs,
