@@ -4,16 +4,19 @@ import { Col } from 'react-bootstrap';
 import CardItem from 'components/CardItem';
 import CardListItem from 'components/CardListItem';
 
-export const useGetBlogsPages = ({ blogs: initialData, filter }) => {
+export const useGetBlogsPages = ({ blogs, filter }) => {
   return useSWRPages(
     'index-page',
     ({ offset, withSWR }) => {
-      const { data: blogs } = withSWR(useGetBlogs({ offset }));
-      if (!blogs) {
+      let initialData = !offset && blogs;
+      const { data: paginatedBlogs } = withSWR(
+        useGetBlogs({ offset }, initialData)
+      );
+      if (!paginatedBlogs) {
         return 'Loading...';
       }
 
-      return blogs.map((blog) =>
+      return paginatedBlogs.map((blog) =>
         filter.view.list ? (
           <Col key={`${blog.slug}-list`} md="9">
             <CardListItem
