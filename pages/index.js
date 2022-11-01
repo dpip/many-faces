@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { Row } from 'react-bootstrap';
+import { Row, Button } from 'react-bootstrap';
 import PageLayout from 'components/PageLayout';
 import AuthorIntro from 'components/AuthorIntro';
 import FilteringMenu from 'components/FilteringMenu';
@@ -27,6 +27,20 @@ export default function Home({ blogs }) {
       />
       <hr />
       <Row className="mb-5">{pages}</Row>
+      <div style={{ textAlign: 'center' }}>
+        <Button
+          onClick={loadMore}
+          disabled={isReachingEnd || isLoadingMore}
+          variant="outline-secondary"
+          size="lg"
+        >
+          {isLoadingMore
+            ? '...'
+            : isReachingEnd
+            ? 'No more blogs'
+            : 'More blogs'}
+        </Button>
+      </div>
     </PageLayout>
   );
 }
