@@ -10,7 +10,7 @@ export const useGetBlogsPages = ({ blogs, filter }) => {
     ({ offset, withSWR }) => {
       let initialData = !offset && blogs;
       const { data: paginatedBlogs } = withSWR(
-        useGetBlogs({ offset }, initialData)
+        useGetBlogs({ offset, filter }, initialData)
       );
       if (!paginatedBlogs) {
         return 'Loading...';
