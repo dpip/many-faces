@@ -9,8 +9,8 @@ export const useGetHello = () => useSWR('/api/hello', fetcher);
 //   return useSWR(`/api/blogs`, fetcher);
 // };
 
-export const useGetBlogs = (initialData) => {
-  return useSWR(`../api/blogs`, fetcher, {
+export const useGetBlogs = ({ offset }, initialData) => {
+  return useSWR(`../api/blogs?offset${offset || 0}`, fetcher, {
     fallbackData: initialData,
   });
 };

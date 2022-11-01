@@ -8,7 +8,7 @@ export const useGetBlogsPages = ({ blogs: initialData, filter }) => {
   return useSWRPages(
     'index-page',
     ({ offset, withSWR }) => {
-      const { data: blogs } = withSWR(useGetBlogs(initialData));
+      const { data: blogs } = withSWR(useGetBlogs({ offset }));
 
       if (!blogs) {
         return 'Loading...';
