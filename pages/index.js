@@ -11,6 +11,7 @@ import { getAllBlogs } from 'lib/api';
 export default function Home({ blogs }) {
   const [filter, setFilter] = useState({
     view: { list: 0 },
+    date: { asc: 0 },
   });
 
   const { pages, isLoadingMore, isReachingEnd, loadMore } =
@@ -31,14 +32,14 @@ export default function Home({ blogs }) {
         <Button
           onClick={loadMore}
           disabled={isReachingEnd || isLoadingMore}
-          variant="outline-secondary"
           size="lg"
+          variant="outline-secondary"
         >
           {isLoadingMore
             ? '...'
             : isReachingEnd
             ? 'No more blogs'
-            : 'More blogs'}
+            : 'More Blogs'}
         </Button>
       </div>
     </PageLayout>
