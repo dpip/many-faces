@@ -1,17 +1,19 @@
 {
   "root": true,
   "project": {
-    "name": "many-faces-sanity"
+    "name": "filip-blog-sanity"
   },
   "api": {
-    "projectId": "oaj5di6x",
+    "projectId": "55mm68d3",
     "dataset": "production"
   },
   "plugins": [
     "@sanity/base",
+    "@sanity/components",
     "@sanity/default-layout",
     "@sanity/default-login",
-    "@sanity/desk-tool"
+    "@sanity/desk-tool",
+    "@sanity/code-input"
   ],
   "env": {
     "development": {
