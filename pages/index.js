@@ -78,7 +78,14 @@ export default function Home({ blogs }) {
           >
             <div style={{ textAlign: 'center', marginRight: '1rem' }}>
               <Button
-                // onClick={}
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.open(
+                    'https://buy.stripe.com/test_bIYcOh3IjdIu2KQcMM',
+                    '_blank',
+                    'noopener,noreferrer'
+                  );
+                }}
                 size="lg"
                 variant="outline-primary"
               >

@@ -19,11 +19,16 @@ const AuthorIntro = () => {
                 Hello Friends,
               </h5>
               <p className="welcome-text">
-                My name is Filip Jerga and I am an experienced
-                software engineer and freelance developer. and this is
-                my blog page.
+                My name is Brian Quinn and I founded The Many Faces initiative ipsum lorem ipsum ipsum. Any inqueries will be recieved primarily through email and thanks for the support!
               </p>
             </Media.Body>
+            <ul>
+              <li>Email</li>
+              <li>Phone</li>
+              <li>Facebook</li>
+              <li>Instagram</li>
+              <li>Twitter</li>
+            </ul>
           </Media>
           {/* AUTHOR INTRO ENDS */}
         </Col>

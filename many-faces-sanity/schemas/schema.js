@@ -168,5 +168,17 @@ export default createSchema({
         },
       ],
     },
+    {
+      name: 'application',
+      type: 'document',
+      title: 'Application',
+      fields: [
+        {
+          name: 'pdf',
+          type: 'string',
+          title: 'Application PDF',
+        },
+      ],
+    },
   ]),
 });
