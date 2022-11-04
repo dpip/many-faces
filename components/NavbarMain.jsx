@@ -1,6 +1,7 @@
 import {
   Navbar,
   Nav,
+  Button
 } from 'react-bootstrap';
 import Link from 'next/link'
 
@@ -18,18 +19,59 @@ const NavbarMain = () => {
           </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ml-auto">
-            <Nav.Link
+        <Navbar.Collapse id="basic-navbar-nav" className="d-flex justify-content-center">
+          <Nav className="text-capitalize">
+              <Nav.Link
               className="fj-navbar-item fj-navbar-link"
               as={() =>
                 <Link href='/'>
-                  <a className="fj-navbar-item fj-navbar-link">Home</a>
+                  <a className="fj-navbar-item fj-navbar-link text-capitalize">About</a>
+                </Link>
+              }
+              />
+              {/* <Nav.Link
+              className="fj-navbar-item fj-navbar-link"
+              as={() =>
+                <Link href='/'>
+                  <a className="fj-navbar-item fj-navbar-link text-capitalize">Supporters</a>
+                </Link>
+              }
+              /> */}
+               <Nav.Link
+              className="fj-navbar-item fj-navbar-link"
+              as={() =>
+                <Link href='/blog'>
+                  <a className="fj-navbar-item fj-navbar-link text-capitalize">Apply</a>
+                </Link>
+              }
+              />
+              <Nav.Link
+              className="fj-navbar-item fj-navbar-link"
+              as={() =>
+                <Link href='/blog'>
+                  <a className="fj-navbar-item fj-navbar-link text-capitalize">Blog</a>
+                </Link>
+              }
+              />
+              <Nav.Link
+              className="fj-navbar-item fj-navbar-link"
+              as={() =>
+                <Link href='/'>
+                  <a className="fj-navbar-item fj-navbar-link text-capitalize">Contact</a>
                 </Link>
               }
               />
           </Nav>
         </Navbar.Collapse>
+        <div style={{ textAlign: 'center' }}>
+        <Button
+          // onClick={}
+          size="lg"
+          variant="outline-primary"
+        >
+          Donate
+        </Button>
+      </div>
       </Navbar>
     )
 }

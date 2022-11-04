@@ -29,6 +29,44 @@ export default createSchema({
       ],
     },
     {
+      name: 'home',
+      type: 'document',
+      title: 'Home',
+      fields: [
+        {
+          name: 'heroImage',
+          type: 'image',
+          title: 'Hero Image',
+          options: {
+            hotspot: true,
+          },
+          fields: [
+            {
+              name: 'alt',
+              type: 'text',
+              title: 'Description',
+            },
+          ],
+        },
+        {
+          name: 'title',
+          type: 'string',
+          title: 'Title',
+          validation: (Rule) => {
+            return Rule.required();
+          },
+        },
+        {
+          name: 'donorsTitle',
+          type: 'string',
+          title: 'Donors Title',
+          validation: (Rule) => {
+            return Rule.required();
+          },
+        },
+      ],
+    },
+    {
       name: 'blog',
       type: 'document',
       title: 'Blog',

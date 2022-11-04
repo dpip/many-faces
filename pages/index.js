@@ -1,9 +1,8 @@
 import { useState } from 'react';
 
-import { Row, Button } from 'react-bootstrap';
+import { Container, Row, Col, Button } from 'react-bootstrap';
 import PageLayout from 'components/PageLayout';
 import AuthorIntro from 'components/AuthorIntro';
-import FilteringMenu from 'components/FilteringMenu';
 
 import { useGetBlogsPages } from 'actions/pagination';
 import { getPaginatedBlogs } from 'lib/api';
@@ -19,29 +18,89 @@ export default function Home({ blogs }) {
 
   return (
     <PageLayout>
-      <AuthorIntro />
-      <FilteringMenu
-        filter={filter}
-        onChange={(option, value) =>
-          setFilter({ ...filter, [option]: value })
-        }
-      />
+      <Container>
+        <Row>
+          <Col>Many Faces logo</Col>
+          <Col>
+            <h1 className={'bold'}>Many Faces Initiative</h1>
+            <p>
+              The Many Faces Initiative deliveres a paid, ten-week
+              brewery internship program designed to provide
+              opportunities to all faces in the brewing industry.
+            </p>
+          </Col>
+        </Row>
+      </Container>
+      <Container>
+        <Row>
+          <Col className={'text-center pt-2'}>
+            <h2>
+              Industry-leading donors pushing boundaries with Many
+              Faces
+            </h2>
+          </Col>
+        </Row>
+      </Container>
+      <Container>
+        <Row>
+          <Col className={'text-center pt-2'}>
+            TODO : Donor logos container
+          </Col>
+        </Row>
+      </Container>
+      <Container>
+        <Row>
+          <Col className={'text-center pt-2'}>
+            <h1>(About) How the program works</h1>
+          </Col>
+        </Row>
+        <Row>
+          <Col className={'text-center pt-2'}>
+            Applicants apply Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit, sed do eiusmod tempor incididunt ut.
+          </Col>
+          <Col className={'text-center pt-2'}>
+            Selected applicants recieve a paid 10 week internship with
+            one of the fine breweries that are vetted by Many Faces.
+          </Col>
+          <Col className={'text-center pt-2'}>
+            Learn alongside the industry's best and make invaluable
+            connections.
+          </Col>
+        </Row>
+      </Container>
+      <Container>
+        <Row>
+          <Col
+            className={
+              'text-center pt-2 d-flex justify-content-center'
+            }
+          >
+            <div style={{ textAlign: 'center', marginRight: '1rem' }}>
+              <Button
+                // onClick={}
+                size="lg"
+                variant="outline-primary"
+              >
+                Donate
+              </Button>
+            </div>
+            <div style={{ textAlign: 'center' }}>
+              <Button
+                // onClick={}
+                size="lg"
+                variant="outline-secondary"
+              >
+                Apply
+              </Button>
+            </div>
+          </Col>
+        </Row>
+      </Container>
+      {/* <AuthorIntro /> */}
       <hr />
-      <Row className="mb-5">{pages}</Row>
-      <div style={{ textAlign: 'center' }}>
-        <Button
-          onClick={loadMore}
-          disabled={isReachingEnd || isLoadingMore}
-          size="lg"
-          variant="outline-secondary"
-        >
-          {isLoadingMore
-            ? '...'
-            : isReachingEnd
-            ? 'No more blogs'
-            : 'More Blogs'}
-        </Button>
-      </div>
+      {/* will recomment a blog row for the main page */}
+      {/* <Row className="mb-5">{pages}</Row> */}
     </PageLayout>
   );
 }

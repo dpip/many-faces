@@ -1,10 +1,10 @@
 {
   "root": true,
   "project": {
-    "name": "filip-blog-sanity"
+    "name": "many-faces"
   },
   "api": {
-    "projectId": "55mm68d3",
+    "projectId": "oaj5di6x",
     "dataset": "production"
   },
   "plugins": [

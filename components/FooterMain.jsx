@@ -4,11 +4,11 @@ const FooterMain = () => {
     return (
         <footer className="page-footer">
             <div>
-            <a href="#">courses</a>
-            {' | '}
-            <a href="#">github</a>
+            <a href="#">twitter</a>
             {' | '}
             <a href="#">facebook</a>
+            {' | '}
+            <a href="#">email</a>
             </div>
         </footer>
     )
