@@ -4,6 +4,12 @@ import createSchema from 'part:@sanity/base/schema-creator';
 // Then import schema types from any plugins that might expose them
 import schemaTypes from 'all:part:@sanity/base/schema-type';
 
+// {
+//   name: '',
+//   type: '',
+//   title: '',
+// },
+
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -57,12 +63,59 @@ export default createSchema({
           },
         },
         {
+          name: 'subtitle',
+          type: 'string',
+          title: 'Subtitle',
+        },
+        {
           name: 'donorsTitle',
           type: 'string',
           title: 'Donors Title',
           validation: (Rule) => {
             return Rule.required();
           },
+        },
+        {
+          name: 'donorImages',
+          type: 'array',
+          title: 'Featured Donor Images',
+          of: [
+            {
+              type: 'image',
+            },
+          ],
+        },
+        {
+          name: 'aboutTitle',
+          type: 'string',
+          title: 'About Title',
+        },
+        {
+          name: 'aboutDescription',
+          type: 'string',
+          title: 'About Description',
+        },
+        {
+          name: 'aboutSupportingContentBlocks',
+          type: 'array',
+          title: 'About Supporting Content Blocks',
+          of: [
+            {
+              type: 'document',
+              fields: [
+                {
+                  name: 'supportingImage',
+                  type: 'image',
+                  title: 'Supporting Image',
+                },
+                {
+                  name: 'supportingContent',
+                  type: 'string',
+                  title: 'Supporting Content',
+                },
+              ],
+            },
+          ],
         },
       ],
     },
@@ -175,8 +228,15 @@ export default createSchema({
       fields: [
         {
           name: 'pdf',
-          type: 'string',
+          type: 'file',
           title: 'Application PDF',
+          fields: [
+            {
+              name: 'description',
+              type: 'string',
+              title: 'Description',
+            },
+          ],
         },
       ],
     },
