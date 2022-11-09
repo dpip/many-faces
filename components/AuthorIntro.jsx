@@ -16,12 +16,10 @@ const AuthorIntro = () => {
             />
             <Media.Body>
               <h5 className="font-weight-bold mb-0">
-                Hello Friends,
+                Brian Quin, such and such brewing _____ .
               </h5>
               <p className="welcome-text">
-                My name is Filip Jerga and I am an experienced
-                software engineer and freelance developer. and this is
-                my blog page.
+                Interested in donating, more information, or applying to the program? Email is the the most efficient but feel free to reach out on social media or other means!
               </p>
             </Media.Body>
           </Media>

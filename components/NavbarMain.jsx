@@ -21,14 +21,14 @@ const NavbarMain = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="d-flex justify-content-center">
           <Nav className="text-capitalize">
-              <Nav.Link
+              {/* <Nav.Link
               className="fj-navbar-item fj-navbar-link"
               as={() =>
                 <Link href='/'>
                   <a className="fj-navbar-item fj-navbar-link text-capitalize">About</a>
                 </Link>
               }
-              />
+              /> */}
               {/* <Nav.Link
               className="fj-navbar-item fj-navbar-link"
               as={() =>
