@@ -2,56 +2,78 @@ import { useState } from 'react';
 
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import PageLayout from 'components/PageLayout';
-import AuthorIntro from 'components/AuthorIntro';
 
-import { useGetBlogsPages } from 'actions/pagination';
-import { getPaginatedBlogs } from 'lib/api';
+import { getHome, getApplication, urlFor } from 'lib/api';
 
-export default function Home({ blogs }) {
-  const [filter, setFilter] = useState({
-    view: { list: 0 },
-    date: { asc: 0 },
-  });
-
-  const { pages, isLoadingMore, isReachingEnd, loadMore } =
-    useGetBlogsPages({ blogs, filter });
-
+export default function Home({ home, application }) {
+  const [data] = home;
+  // const [apply] = application;
+  console.log('home data', data, application);
   return (
     <PageLayout>
       <Container>
         <Row>
-          <Col>Many Faces logo</Col>
+          <Col className={'d-flex justify-content-center'}>
+            <img
+              src={urlFor(data.heroImage)
+                .height(400)
+                .crop('center')
+                .fit('clip')
+                .url()}
+              alt="Card image cap"
+            />
+          </Col>
           <Col>
-            <h1 className={'bold'}>Many Faces Initiative</h1>
-            <p>
-              The Many Faces Initiative deliveres a paid, ten-week
-              brewery internship program designed to provide
-              opportunities to all faces in the brewing industry.
-            </p>
+            <span>{data.ctaSnippets}</span>
+            <h1 className={'bold'}>{data.title}</h1>
+            <p>{data.subtitle}</p>
+            <Row>
+              <Col
+                className={
+                  'text-center pt-2 d-flex justify-content-start'
+                }
+              >
+                <div
+                  style={{ textAlign: 'center', marginRight: '1rem' }}
+                >
+                  <Button
+                    onClick={(e) => {
+                      e.preventDefault();
+                      window.open(
+                        'https://buy.stripe.com/test_bIYcOh3IjdIu2KQcMM',
+                        '_blank',
+                        'noopener,noreferrer'
+                      );
+                    }}
+                    size="lg"
+                    variant="outline-primary"
+                  >
+                    Donate
+                  </Button>
+                </div>
+                <div style={{ textAlign: 'center' }}>
+                  <Button
+                    // onClick={}
+                    size="lg"
+                    variant="outline-secondary"
+                  >
+                    Apply
+                  </Button>
+                </div>
+              </Col>
+            </Row>
           </Col>
         </Row>
       </Container>
-      <Container>
+      <Container className={'pt-6'}>
         <Row>
           <Col className={'text-center pt-2'}>
-            <h2>
-              Industry-leading donors pushing boundaries with Many
-              Faces
-            </h2>
+            <h1>{data.aboutTitle}</h1>
           </Col>
         </Row>
-      </Container>
-      <Container>
         <Row>
           <Col className={'text-center pt-2'}>
-            TODO : Donor logos container
-          </Col>
-        </Row>
-      </Container>
-      <Container>
-        <Row>
-          <Col className={'text-center pt-2'}>
-            <h1>(About) How the program works</h1>
+            <p>{data.aboutDescription}</p>
           </Col>
         </Row>
         <Row>
@@ -104,6 +126,31 @@ export default function Home({ blogs }) {
           </Col>
         </Row>
       </Container>
+      <Container>
+        <Row>
+          <Col className={'text-center pt-2'}>
+            <h2>{data.donorsTitle}</h2>
+          </Col>
+        </Row>
+      </Container>
+      <Container>
+        <Row>
+          {data.donorImages.map((image, index) => {
+            return (
+              <Col key={index} className={'text-center pt-2'}>
+                <img
+                  src={urlFor(image)
+                    .height(100)
+                    .crop('center')
+                    .fit('clip')
+                    .url()}
+                  alt="Card image cap"
+                />
+              </Col>
+            );
+          })}
+        </Row>
+      </Container>
       {/* <AuthorIntro /> */}
       <hr />
       {/* will recomment a blog row for the main page */}
@@ -113,10 +160,12 @@ export default function Home({ blogs }) {
 }
 
 export async function getStaticProps() {
-  const blogs = await getPaginatedBlogs({ offset: 0, date: 'desc' });
+  const home = await getHome();
+  const apply = await getApplication();
   return {
     props: {
-      blogs,
+      home,
+      apply,
     },
   };
 }

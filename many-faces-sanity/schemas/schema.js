@@ -55,6 +55,11 @@ export default createSchema({
           ],
         },
         {
+          name: 'ctaSnippets',
+          type: 'string',
+          title: 'CTA Snippets',
+        },
+        {
           name: 'title',
           type: 'string',
           title: 'Title',
