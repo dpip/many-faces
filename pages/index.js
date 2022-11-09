@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import { Container, Row, Col, Button } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PageLayout from 'components/PageLayout';
 
 import { getHome, getApplication, urlFor } from 'lib/api';
@@ -65,7 +66,7 @@ export default function Home({ home, application }) {
           </Col>
         </Row>
       </Container>
-      <Container className={'pt-6'}>
+      <Container className={'mt-5'}>
         <Row>
           <Col className={'text-center pt-2'}>
             <h1>{data.aboutTitle}</h1>
@@ -78,14 +79,35 @@ export default function Home({ home, application }) {
         </Row>
         <Row>
           <Col className={'text-center pt-2'}>
+            <div>
+              <FontAwesomeIcon
+                className="mb-3 mt-5"
+                size="4x"
+                icon={'user'}
+              />
+            </div>
             Applicants apply Lorem ipsum dolor sit amet, consectetur
             adipiscing elit, sed do eiusmod tempor incididunt ut.
           </Col>
           <Col className={'text-center pt-2'}>
+            <div>
+              <FontAwesomeIcon
+                className="mb-3 mt-5"
+                size="4x"
+                icon={'gift'}
+              />
+            </div>
             Selected applicants recieve a paid 10 week internship with
             one of the fine breweries that are vetted by Many Faces.
           </Col>
           <Col className={'text-center pt-2'}>
+            <div>
+              <FontAwesomeIcon
+                className="mb-3 mt-5"
+                size="4x"
+                icon={'graduation-cap'}
+              />
+            </div>
             Learn alongside the industry's best and make invaluable
             connections.
           </Col>
@@ -95,7 +117,7 @@ export default function Home({ home, application }) {
         <Row>
           <Col
             className={
-              'text-center pt-2 d-flex justify-content-center'
+              'text-center pt-2 d-flex justify-content-center mt-3'
             }
           >
             <div style={{ textAlign: 'center', marginRight: '1rem' }}>
@@ -128,12 +150,12 @@ export default function Home({ home, application }) {
       </Container>
       <Container>
         <Row>
-          <Col className={'text-center pt-2'}>
+          <Col className={'text-center pt-2 mt-5'}>
             <h2>{data.donorsTitle}</h2>
           </Col>
         </Row>
       </Container>
-      <Container>
+      <Container className={'mt-3 mb-5'}>
         <Row>
           {data.donorImages.map((image, index) => {
             return (

@@ -11,10 +11,21 @@ import {
   faList,
   faSortNumericDown,
   faSortNumericUp,
+  faUser,
+  faGift,
+  faGraduationCap,
 } from '@fortawesome/free-solid-svg-icons';
 
 config.autoAddCss = false;
-library.add(faList, faBorderAll, faSortNumericDown, faSortNumericUp);
+library.add(
+  faList,
+  faBorderAll,
+  faSortNumericDown,
+  faSortNumericUp,
+  faUser,
+  faGift,
+  faGraduationCap
+);
 
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />;
