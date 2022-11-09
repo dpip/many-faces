@@ -19,7 +19,11 @@ import useSWR from 'swr';
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
-export const useGetHello = () => useSWR('/api/hello', fetcher);
+export const useGetHome = (initialData) => {
+  return useSWR(`/api/home`, fetcher, {
+    initialData,
+  });
+};
 
 export const useGetBlogs = ({ offset, filter }, initialData) => {
   return useSWR(
