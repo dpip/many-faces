@@ -4,22 +4,24 @@ import { Row, Button } from 'react-bootstrap';
 import PageLayout from 'components/PageLayout';
 import AuthorIntro from 'components/AuthorIntro';
 
-// import { getContact} from 'lib/api';
+import { getAbout } from 'lib/api';
 
 export default function About({ about }) {
+  const [data] = about;
+  console.log('about data', data);
   return (
     <PageLayout>
-      <h1>About</h1>
+      <h1>{data.title}</h1>
       <hr />
     </PageLayout>
   );
 }
 
-// export async function getStaticProps() {
-//     const blogs = await getContact();
-//   return {
-//     props: {
-//       contact,
-//     },
-//   };
-// }
+export async function getStaticProps() {
+  const about = await getAbout();
+  return {
+    props: {
+      about,
+    },
+  };
+}
