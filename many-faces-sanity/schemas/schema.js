@@ -122,6 +122,11 @@ export default createSchema({
             },
           ],
         },
+        {
+          name: 'application',
+          type: 'file',
+          title: 'Application PDF',
+        },
       ],
     },
     {
@@ -223,25 +228,6 @@ export default createSchema({
               'Slugs dictate the blog url name split with hyphens, ex. "my-blog-name"'
             );
           },
-        },
-      ],
-    },
-    {
-      name: 'application',
-      type: 'document',
-      title: 'Application',
-      fields: [
-        {
-          name: 'pdf',
-          type: 'file',
-          title: 'Application PDF',
-          fields: [
-            {
-              name: 'description',
-              type: 'string',
-              title: 'Description',
-            },
-          ],
         },
       ],
     },

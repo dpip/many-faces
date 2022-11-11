@@ -14,6 +14,8 @@ import {
   faUser,
   faGift,
   faGraduationCap,
+  faPhone,
+  faEnvelope,
 } from '@fortawesome/free-solid-svg-icons';
 
 config.autoAddCss = false;
@@ -24,7 +26,9 @@ library.add(
   faSortNumericUp,
   faUser,
   faGift,
-  faGraduationCap
+  faGraduationCap,
+  faPhone,
+  faEnvelope
 );
 
 function MyApp({ Component, pageProps }) {

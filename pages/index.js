@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PageLayout from 'components/PageLayout';
@@ -8,8 +6,8 @@ import { getHome, getApplication, urlFor } from 'lib/api';
 
 export default function Home({ home, application }) {
   const [data] = home;
-  // const [apply] = application;
-  console.log('home data', data, application);
+  const [apply] = application;
+  // console.log('home data', data, apply);
   return (
     <PageLayout>
       <Container>
@@ -137,13 +135,15 @@ export default function Home({ home, application }) {
               </Button>
             </div>
             <div style={{ textAlign: 'center' }}>
-              <Button
-                // onClick={}
-                size="lg"
-                variant="outline-secondary"
+              <a
+                href={`${apply.application}`}
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                Apply
-              </Button>
+                <Button size="lg" variant="outline-secondary">
+                  Apply
+                </Button>
+              </a>
             </div>
           </Col>
         </Row>
@@ -183,11 +183,11 @@ export default function Home({ home, application }) {
 
 export async function getStaticProps() {
   const home = await getHome();
-  const apply = await getApplication();
+  const application = await getApplication();
   return {
     props: {
       home,
-      apply,
+      application,
     },
   };
 }
