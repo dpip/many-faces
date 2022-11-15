@@ -363,9 +363,44 @@ export default createSchema({
           ],
         },
         {
-          name: 'ctaSnippets',
-          type: 'string',
-          title: 'CTA Snippets',
+          name: 'content',
+          type: 'array',
+          title: 'Content',
+          of: [
+            {
+              type: 'block',
+            },
+            {
+              type: 'image',
+              fields: [
+                {
+                  title: 'Position',
+                  name: 'position',
+                  type: 'string',
+                  options: {
+                    list: [
+                      { title: 'Center', value: 'center' },
+                      { title: 'Left', value: 'left' },
+                      { title: 'Right', value: 'right' },
+                    ],
+                    layout: 'radio',
+                    isHighlighted: true,
+                  },
+                },
+                {
+                  name: 'alt',
+                  type: 'text',
+                  title: 'Description',
+                  options: {
+                    isHighlighted: true,
+                  },
+                },
+              ],
+              options: {
+                hotspot: true,
+              },
+            },
+          ],
         },
         {
           name: 'title',
@@ -379,61 +414,6 @@ export default createSchema({
           name: 'subtitle',
           type: 'string',
           title: 'Subtitle',
-        },
-        {
-          name: 'donorsTitle',
-          type: 'string',
-          title: 'Donors Title',
-          validation: (Rule) => {
-            return Rule.required();
-          },
-        },
-        {
-          name: 'donorImages',
-          type: 'array',
-          title: 'Featured Donor Images',
-          of: [
-            {
-              type: 'image',
-            },
-          ],
-        },
-        {
-          name: 'aboutTitle',
-          type: 'string',
-          title: 'About Title',
-        },
-        {
-          name: 'aboutDescription',
-          type: 'string',
-          title: 'About Description',
-        },
-        {
-          name: 'aboutSupportingContentBlocks',
-          type: 'array',
-          title: 'About Supporting Content Blocks',
-          of: [
-            {
-              type: 'document',
-              fields: [
-                {
-                  name: 'supportingImage',
-                  type: 'image',
-                  title: 'Supporting Image',
-                },
-                {
-                  name: 'supportingContent',
-                  type: 'string',
-                  title: 'Supporting Content',
-                },
-              ],
-            },
-          ],
-        },
-        {
-          name: 'application',
-          type: 'file',
-          title: 'Application PDF',
         },
       ],
     },

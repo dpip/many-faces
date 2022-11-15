@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
-import { Row, Button } from 'react-bootstrap';
+import { Container, Row, Col, Button } from 'react-bootstrap';
 import PageLayout from 'components/PageLayout';
 import AuthorIntro from 'components/AuthorIntro';
 import AboutContent from 'components/AboutContent';
 
-import { getAbout } from 'lib/api';
+import { getAbout, urlFor } from 'lib/api';
 
 export default function About({ about }) {
   const [data] = about;
@@ -13,6 +13,20 @@ export default function About({ about }) {
   return (
     <PageLayout>
       <h1>{data.title}</h1>
+      <Container>
+        <Row>
+          <Col className={'d-flex justify-content-center'}>
+            <img
+              src={urlFor(data.heroImage)
+                .height(400)
+                .crop('center')
+                .fit('clip')
+                .url()}
+              alt="Card image cap"
+            />
+          </Col>
+        </Row>
+      </Container>
       {data.content && <AboutContent content={data.content} />}
       <hr />
     </PageLayout>

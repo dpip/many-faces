@@ -1,25 +1,42 @@
 import { useState } from 'react';
 
-import { Row, Button } from 'react-bootstrap';
+import { Container, Row, Col, Button } from 'react-bootstrap';
 import PageLayout from 'components/PageLayout';
-import AuthorIntro from 'components/AuthorIntro';
+import ApplyContent from 'components/AboutContent';
 
-// import { getContact} from 'lib/api';
+import { getApply, urlFor } from 'lib/api';
 
-export default function Apply({ apply }) {
+export default function About({ apply }) {
+  const [data] = apply;
+  console.log('about data', data);
   return (
     <PageLayout>
-      <h1>Apply</h1>
+      <h1>{data.title}</h1>
+      <Container>
+        <Row>
+          <Col className={'d-flex justify-content-center'}>
+            <img
+              src={urlFor(data.heroImage)
+                .height(400)
+                .crop('center')
+                .fit('clip')
+                .url()}
+              alt="Card image cap"
+            />
+          </Col>
+        </Row>
+      </Container>
+      {data.content && <ApplyContent content={data.content} />}
       <hr />
     </PageLayout>
   );
 }
 
-// export async function getStaticProps() {
-//     const blogs = await getContact();
-//   return {
-//     props: {
-//       apply,
-//     },
-//   };
-// }
+export async function getStaticProps() {
+  const apply = await getApply();
+  return {
+    props: {
+      apply,
+    },
+  };
+}
