@@ -58,7 +58,7 @@ export default function Contact({ contact }) {
                         >
                           <FontAwesomeIcon
                             className="d-flex justify-content-center align-items-center mr-3"
-                            size="4x"
+                            size="2x"
                             icon={'envelope'}
                           />
                           <div
@@ -66,7 +66,7 @@ export default function Contact({ contact }) {
                               'h-100 d-flex justify-content-center align-items-center'
                             }
                           >
-                            Email
+                            {data.emailTitle}
                           </div>
                         </a>
                       </div>
@@ -81,7 +81,7 @@ export default function Contact({ contact }) {
                         >
                           <FontAwesomeIcon
                             className="d-flex justify-content-center align-items-center mr-3"
-                            size="4x"
+                            size="2x"
                             icon={'phone'}
                           />
                           <div
@@ -89,7 +89,7 @@ export default function Contact({ contact }) {
                               'h-100 d-flex justify-content-center align-items-center'
                             }
                           >
-                            Phone
+                            {data.phoneTitle}
                           </div>
                         </a>
                       </div>
@@ -104,7 +104,7 @@ export default function Contact({ contact }) {
                         >
                           <FontAwesomeIcon
                             className="d-flex justify-content-center align-items-center mr-3"
-                            size="4x"
+                            size="2x"
                             icon={faFacebook}
                           />
                           <div
@@ -112,7 +112,7 @@ export default function Contact({ contact }) {
                               'h-100 d-flex justify-content-center align-items-center'
                             }
                           >
-                            Facebook
+                            {data.facebookTitle}
                           </div>
                         </a>
                       </div>
@@ -128,7 +128,7 @@ export default function Contact({ contact }) {
                           >
                             <FontAwesomeIcon
                               className="d-flex justify-content-center align-items-center"
-                              size="4x"
+                              size="2x"
                               icon={faInstagram}
                             />
                             <div
@@ -136,7 +136,7 @@ export default function Contact({ contact }) {
                                 'h-100 d-flex justify-content-center align-items-center'
                               }
                             >
-                              Instagram
+                              {data.instagramTitle}
                             </div>
                           </a>
                         </div>

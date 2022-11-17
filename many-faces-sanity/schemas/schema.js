@@ -555,6 +555,11 @@ export default createSchema({
           title: 'Contact Intro',
         },
         {
+          name: 'emailTitle',
+          type: 'string',
+          title: 'Email Title',
+        },
+        {
           name: 'email',
           type: 'url',
           title: 'Email',
@@ -562,6 +567,11 @@ export default createSchema({
             Rule.uri({
               scheme: ['mailto'],
             }),
+        },
+        {
+          name: 'phoneTitle',
+          type: 'string',
+          title: 'Phone Title',
         },
         {
           name: 'phone',
@@ -573,6 +583,11 @@ export default createSchema({
             }),
         },
         {
+          name: 'facebookTitle',
+          type: 'string',
+          title: 'Facebook Title',
+        },
+        {
           name: 'facebook',
           type: 'url',
           title: 'Facebook',
@@ -580,6 +595,11 @@ export default createSchema({
             Rule.uri({
               scheme: ['http', 'https'],
             }),
+        },
+        {
+          name: 'instagramTitle',
+          type: 'string',
+          title: 'Instagram Title',
         },
         {
           name: 'instagram',
