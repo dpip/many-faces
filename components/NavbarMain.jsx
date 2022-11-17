@@ -32,16 +32,16 @@ const NavbarMain = () => {
               <Nav.Link
               className="fj-navbar-item fj-navbar-link"
               as={() =>
-                <Link href='/donate'>
-                  <a className="fj-navbar-item fj-navbar-link text-capitalize">Donate</a>
+                <Link href='/apply'>
+                  <a className="fj-navbar-item fj-navbar-link text-capitalize">Apply</a>
                 </Link>
               }
               />
               <Nav.Link
               className="fj-navbar-item fj-navbar-link"
               as={() =>
-                <Link href='/apply'>
-                  <a className="fj-navbar-item fj-navbar-link text-capitalize">Apply</a>
+                <Link href='/donate'>
+                  <a className="fj-navbar-item fj-navbar-link text-capitalize">Donate</a>
                 </Link>
               }
               />
