@@ -268,14 +268,6 @@ export default createSchema({
           ],
         },
         {
-          name: 'title',
-          type: 'string',
-          title: 'Title',
-          validation: (Rule) => {
-            return Rule.required();
-          },
-        },
-        {
           name: 'content',
           type: 'array',
           title: 'Content',
@@ -314,6 +306,23 @@ export default createSchema({
               },
             },
           ],
+        },
+        {
+          name: 'title',
+          type: 'string',
+          title: 'Title',
+          validation: (Rule) => {
+            return Rule.required();
+          },
+        },
+        {
+          name: 'donateUrl',
+          type: 'url',
+          title: 'Donate URL',
+          validation: (Rule) =>
+            Rule.uri({
+              scheme: ['http', 'https'],
+            }),
         },
       ],
     },
@@ -516,21 +525,6 @@ export default createSchema({
       type: 'document',
       title: 'Contact',
       fields: [
-        {
-          name: 'heroImage',
-          type: 'image',
-          title: 'Hero Image',
-          options: {
-            hotspot: true,
-          },
-          fields: [
-            {
-              name: 'alt',
-              type: 'text',
-              title: 'Description',
-            },
-          ],
-        },
         {
           name: 'title',
           type: 'string',
