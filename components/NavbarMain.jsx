@@ -4,9 +4,13 @@ import {
   Button
 } from 'react-bootstrap';
 import Link from 'next/link'
+import { useTheme } from 'providers/ThemeProvider';
+
 
 
 const NavbarMain = () => {
+    const { theme, toggleTheme } = useTheme();
+
     return (
         <Navbar
         className="fj-navbar fj-nav-base"
@@ -64,13 +68,16 @@ const NavbarMain = () => {
           </Nav>
         </Navbar.Collapse>
         <div style={{ textAlign: 'center' }}>
-        <Button
+          <button className="btn btn-success" onClick={toggleTheme}>
+            {theme.type}
+          </button>
+        {/* <Button
           // onClick={}
           size="lg"
           variant="outline-primary"
         >
           Donate
-        </Button>
+        </Button> */}
       </div>
       </Navbar>
     )

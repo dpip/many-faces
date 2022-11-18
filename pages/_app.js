@@ -2,6 +2,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import 'styles/index.scss';
 
+import ThemeProvider from 'providers/ThemeProvider';
+
 const {
   library,
   config,
@@ -32,7 +34,11 @@ library.add(
 );
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+  return (
+    <ThemeProvider>
+      <Component {...pageProps} />
+    </ThemeProvider>
+  );
 }
 
 export default MyApp;
