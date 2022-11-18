@@ -1,13 +1,14 @@
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PageLayout from 'components/PageLayout';
+import Link from 'next/link';
 
 import { getHome, getApplication, urlFor } from 'lib/api';
 
 export default function Home({ home, application }) {
   const [data] = home;
   const [apply] = application;
-  // console.log('home data', data, apply);
+
   return (
     <PageLayout>
       <Container>
@@ -35,29 +36,18 @@ export default function Home({ home, application }) {
                 <div
                   style={{ textAlign: 'center', marginRight: '1rem' }}
                 >
-                  <Button
-                    onClick={(e) => {
-                      e.preventDefault();
-                      window.open(
-                        'https://buy.stripe.com/test_bIYcOh3IjdIu2KQcMM',
-                        '_blank',
-                        'noopener,noreferrer'
-                      );
-                    }}
-                    size="lg"
-                    variant="outline-primary"
-                  >
-                    Donate
-                  </Button>
+                  <Link href="/donate">
+                    <Button size="lg" variant="outline-primary">
+                      Donate
+                    </Button>
+                  </Link>
                 </div>
                 <div style={{ textAlign: 'center' }}>
-                  <Button
-                    // onClick={}
-                    size="lg"
-                    variant="outline-secondary"
-                  >
-                    Apply
-                  </Button>
+                  <Link href="/apply">
+                    <Button size="lg" variant="outline-secondary">
+                      Apply
+                    </Button>
+                  </Link>
                 </div>
               </Col>
             </Row>
@@ -113,43 +103,6 @@ export default function Home({ home, application }) {
       </Container>
       <Container>
         <Row>
-          <Col
-            className={
-              'text-center pt-2 d-flex justify-content-center mt-3'
-            }
-          >
-            <div style={{ textAlign: 'center', marginRight: '1rem' }}>
-              <Button
-                onClick={(e) => {
-                  e.preventDefault();
-                  window.open(
-                    'https://buy.stripe.com/test_bIYcOh3IjdIu2KQcMM',
-                    '_blank',
-                    'noopener,noreferrer'
-                  );
-                }}
-                size="lg"
-                variant="outline-primary"
-              >
-                Donate
-              </Button>
-            </div>
-            <div style={{ textAlign: 'center' }}>
-              <a
-                href={`${apply.application}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button size="lg" variant="outline-secondary">
-                  Apply
-                </Button>
-              </a>
-            </div>
-          </Col>
-        </Row>
-      </Container>
-      <Container>
-        <Row>
           <Col className={'text-center pt-2 mt-5'}>
             <h2>{data.donorsTitle}</h2>
           </Col>
@@ -173,7 +126,30 @@ export default function Home({ home, application }) {
           })}
         </Row>
       </Container>
-      {/* <AuthorIntro /> */}
+      <Container>
+        <Row>
+          <Col
+            className={
+              'text-center pt-2 d-flex justify-content-center mt-3'
+            }
+          >
+            <div style={{ textAlign: 'center', marginRight: '1rem' }}>
+              <Link href="/donate">
+                <Button size="lg" variant="outline-primary">
+                  Donate
+                </Button>
+              </Link>
+            </div>
+            <div style={{ textAlign: 'center' }}>
+              <Link href="/apply">
+                <Button size="lg" variant="outline-secondary">
+                  Apply
+                </Button>
+              </Link>
+            </div>
+          </Col>
+        </Row>
+      </Container>
       <hr />
       {/* will recomment a blog row for the main page */}
       {/* <Row className="mb-5">{pages}</Row> */}
