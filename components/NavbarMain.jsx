@@ -4,6 +4,7 @@ import {
   Button
 } from 'react-bootstrap';
 import Link from 'next/link'
+import ThemeToggle from 'components/ThemeToggle';
 import { useTheme } from 'providers/ThemeProvider';
 
 
@@ -68,9 +69,10 @@ const NavbarMain = () => {
           </Nav>
         </Navbar.Collapse>
         <div style={{ textAlign: 'center' }}>
-          <button className="btn btn-success" onClick={toggleTheme}>
+          <ThemeToggle onChange={toggleTheme} />
+          {/* <button className="btn btn-success" onClick={toggleTheme}>
             {theme.type}
-          </button>
+          </button> */}
         {/* <Button
           // onClick={}
           size="lg"
