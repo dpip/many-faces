@@ -17,6 +17,7 @@
     "@sanity/client": "^1.149.13",
     "@sanity/image-url": "^1.0.1",
     "bootstrap": "^4.5.0",
+    "framer-motion": "^7.6.7",
     "moment": "^2.29.4",
     "next": "12.3.1",
     "react": "18.2.0",
