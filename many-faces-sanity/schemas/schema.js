@@ -327,6 +327,81 @@ export default createSchema({
       ],
     },
     {
+      name: 'join',
+      type: 'document',
+      title: 'Join',
+      fields: [
+        {
+          name: 'heroImage',
+          type: 'image',
+          title: 'Hero Image',
+          options: {
+            hotspot: true,
+          },
+          fields: [
+            {
+              name: 'alt',
+              type: 'text',
+              title: 'Description',
+            },
+          ],
+        },
+        {
+          name: 'content',
+          type: 'array',
+          title: 'Content',
+          of: [
+            {
+              type: 'block',
+            },
+            {
+              type: 'image',
+              fields: [
+                {
+                  title: 'Position',
+                  name: 'position',
+                  type: 'string',
+                  options: {
+                    list: [
+                      { title: 'Center', value: 'center' },
+                      { title: 'Left', value: 'left' },
+                      { title: 'Right', value: 'right' },
+                    ],
+                    layout: 'radio',
+                    isHighlighted: true,
+                  },
+                },
+                {
+                  name: 'alt',
+                  type: 'text',
+                  title: 'Description',
+                  options: {
+                    isHighlighted: true,
+                  },
+                },
+              ],
+              options: {
+                hotspot: true,
+              },
+            },
+          ],
+        },
+        {
+          name: 'title',
+          type: 'string',
+          title: 'Title',
+          validation: (Rule) => {
+            return Rule.required();
+          },
+        },
+        {
+          name: 'application',
+          type: 'file',
+          title: 'Application PDF',
+        },
+      ],
+    },
+    {
       name: 'apply',
       type: 'document',
       title: 'Apply',

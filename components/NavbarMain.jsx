@@ -53,6 +53,14 @@ const NavbarMain = () => {
               <Nav.Link
               className="fj-navbar-item fj-navbar-link"
               as={() =>
+                <Link href='/join'>
+                  <a className="fj-navbar-item fj-navbar-link text-capitalize">Join</a>
+                </Link>
+              }
+              />
+              <Nav.Link
+              className="fj-navbar-item fj-navbar-link"
+              as={() =>
                 <Link href='/blog'>
                   <a className="fj-navbar-item fj-navbar-link text-capitalize">Blog</a>
                 </Link>
