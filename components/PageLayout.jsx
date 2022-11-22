@@ -28,9 +28,12 @@ const PageLayout = ({children, className}) => {
                 toggleTheme={toggleTheme}
             />
             <motion.main
-                initial="hidden"
-                animate="enter"
-                exit="exit"
+                // initial="hidden"
+                // animate="enter"
+                // exit="exit"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
                 variants={variants}
                 transition={{ type: 'linear' }}
                 className="
