@@ -13,7 +13,11 @@ export default function Home({ home, application }) {
     <PageLayout>
       <Container>
         <Row>
-          <Col className={'d-flex justify-content-center'}>
+          <Col
+            className={'d-flex justify-content-center'}
+            sm={12}
+            md={6}
+          >
             <img
               src={urlFor(data.heroImage)
                 .height(400)
@@ -23,7 +27,7 @@ export default function Home({ home, application }) {
               alt="Card image cap"
             />
           </Col>
-          <Col>
+          <Col className={'pt-sm-5'} sm={12} md={6}>
             <span>{data.ctaSnippets}</span>
             <h1 className={'bold'}>{data.title}</h1>
             <p>{data.subtitle}</p>
@@ -66,7 +70,7 @@ export default function Home({ home, application }) {
           </Col>
         </Row>
         <Row>
-          <Col className={'text-center pt-2'}>
+          <Col className={'text-center pt-2'} xs={12} sm={4}>
             <div>
               <FontAwesomeIcon
                 className="mb-3 mt-5"
@@ -77,7 +81,7 @@ export default function Home({ home, application }) {
             Applicants apply Lorem ipsum dolor sit amet, consectetur
             adipiscing elit, sed do eiusmod tempor incididunt ut.
           </Col>
-          <Col className={'text-center pt-2'}>
+          <Col className={'text-center pt-2'} xs={12} sm={4}>
             <div>
               <FontAwesomeIcon
                 className="mb-3 mt-5"
@@ -88,7 +92,7 @@ export default function Home({ home, application }) {
             Selected applicants recieve a paid 10 week internship with
             one of the fine breweries that are vetted by Many Faces.
           </Col>
-          <Col className={'text-center pt-2'}>
+          <Col className={'text-center pt-2'} xs={12} sm={4}>
             <div>
               <FontAwesomeIcon
                 className="mb-3 mt-5"
@@ -112,8 +116,14 @@ export default function Home({ home, application }) {
         <Row>
           {data.donorImages.map((image, index) => {
             return (
-              <Col key={index} className={'text-center pt-2'}>
+              <Col
+                key={index}
+                className={'text-center mt-md-5 pt-2'}
+                xs={12}
+                sm={4}
+              >
                 <img
+                  className={'text-center mt-4'}
                   src={urlFor(image)
                     .height(100)
                     .crop('center')

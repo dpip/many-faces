@@ -41,7 +41,19 @@ library.add(
 
 function MyApp({ Component, pageProps }) {
   return (
-    <ThemeProvider>
+    <ThemeProvider
+      breakPoints={[
+        'xxxl',
+        'xxl',
+        'xl',
+        'lg',
+        'md',
+        'sm',
+        'xs',
+        'xxs',
+      ]}
+      minBreakpoint="xxs"
+    >
       <AnimatePresence
         exitBeforeEnter
         initial={false}

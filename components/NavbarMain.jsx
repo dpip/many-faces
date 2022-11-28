@@ -1,3 +1,4 @@
+import {useEffect} from 'react'
 import {
   Navbar,
   Nav,
@@ -11,9 +12,30 @@ import { useTheme } from 'providers/ThemeProvider';
 
 const NavbarMain = () => {
     const { theme, toggleTheme } = useTheme();
+    let timeout
+    let scroll = 0
+      useEffect(() => {
+        window.onscroll = () => {
+          if (timeout) {
+            clearTimeout(timeout)
+          }
 
+          timeout = setTimeout(() => {
+            if (scroll >= window.scrollY && window.scrollY > 10) {
+              document.getElementById('navbar').classList.add('sticky')
+              alert('if test')
+            } else {
+              document.getElementById('navbar').classList.remove('sticky')
+              alert('else test')
+            }
+
+            scroll = window.scrollY
+          }, 10)
+        }
+      }, [])
     return (
         <Navbar
+        id={'navbar'}
         className="fj-navbar fj-nav-base"
         bg="transparent"
         expand="lg"
