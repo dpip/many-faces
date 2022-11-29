@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import 'react-toggle/style.css';
 import 'styles/index.scss';
+import 'styles/navbar.scss';
 import { AnimatePresence } from 'framer-motion';
 
 import ThemeProvider from 'providers/ThemeProvider';

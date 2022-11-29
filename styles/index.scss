@@ -413,3 +413,51 @@ body {
         }
     }
 }
+
+
+// #navbar {
+
+//     //   top: -100px;
+//     //   transition: top 0.5s ease-in-out;
+//     .sticky {
+//         position: fixed;
+//         top: 500;
+//         width: 100%;
+//         transition: all 0.5s ease;
+//         animation: smoothScroll 1s forwards;
+//     }
+
+//     @keyframes smoothScroll {
+//         0% {
+//             transform: translateY(-142px);
+//         }
+
+//         100% {
+//             transform: translateY(0px);
+//         }
+//     }
+// }
+    .nav-wrapper {
+
+        background-color: #f4f7f9 !important;
+    }
+    .sticky {
+        position: fixed;
+        left: 0;
+        width: 100%;
+        transition: all 0.5s ease;
+        animation: smoothScroll 1s forwards;
+        background-color: #f4f7f9 !important;
+        z-index: 100;
+        // width: 100vw !important;
+    }
+
+    @keyframes smoothScroll {
+        0% {
+            transform: translateY(-142px);
+        }
+
+        100% {
+            transform: translateY(0px);
+        }
+    }
