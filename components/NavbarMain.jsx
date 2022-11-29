@@ -39,7 +39,13 @@ const NavbarMain = () => {
 
     return (
       <Container style={{height: '100px'}}>
-        <div className={`${sticky.isSticky ? 'sticky' : ''} d-flex justify-content-center`} style={{padding: sticky.isSticky ? '0px 100px 0px 100px' : '0px 15px 0px 15px', boxShadow: sticky.isSticky ? '0px 1px 10px #999' : '', borderRadius: '2px'}}>
+        <div 
+          className={`${sticky.isSticky ? 'sticky' : ''} d-flex justify-content-center`} 
+          style={{
+            padding: sticky.isSticky ? '0px 100px 0px 100px' : '0px 15px 0px 15px', 
+            boxShadow: sticky.isSticky ? '0px 1px 10px #999' : '', 
+            borderRadius: '2px'
+          }}>
           <Navbar
             id={'navbar'}
             className={`fj-navbar fj-nav-base`}
