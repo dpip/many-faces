@@ -52,7 +52,7 @@ const NavbarMain = () => {
             bg="transparent"
             expand="lg"
             ref={headerRef}
-            style={{maxWidth: '1140px'}}
+            style={{maxWidth: '1140px', padding: sticky.isSticky ? '0px 30px' : '20px 0px'}}
           >
             <Navbar.Brand className="fj-navbar-brand">
               <Link href="/">
@@ -112,8 +112,8 @@ const NavbarMain = () => {
                   />
               </Nav>
           </Navbar.Collapse>
-            <div style={{ textAlign: 'center' }}>
-                <ThemeToggle onChange={toggleTheme} />
+            <div className={'d-flex justify-content-center align-items-center'} style={{ textAlign: 'center', marginTop: '14px' }}>
+                <ThemeToggle onChange={toggleTheme}/>
                 {/* <button className="btn btn-success" onClick={toggleTheme}>
                   {theme.type}
                 </button> */}
