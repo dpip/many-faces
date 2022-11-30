@@ -8,11 +8,14 @@ import {
 import Link from 'next/link'
 import ThemeToggle from 'components/ThemeToggle';
 import { useTheme } from 'providers/ThemeProvider';
+import MobileNav from 'components/MobileNav'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 const NavbarMain = () => {
     const { theme, toggleTheme } = useTheme();
     const [sticky, setSticky] = useState({ isSticky: false, offset: 0 });
+    const [mobileNav, setMobileNav] = useState(false)
     const headerRef = useRef(null);
 
     // handle scroll event
@@ -22,6 +25,10 @@ const NavbarMain = () => {
       } else {
         setSticky({ isSticky: false, offset: 0 });      }
     };
+
+    const handleMobileNav = () => {
+      setMobileNav(!mobileNav)
+    }
 
     // add/remove scroll event listener
     useEffect(() => {
@@ -111,22 +118,24 @@ const NavbarMain = () => {
                   }
                   />
               </Nav>
-          </Navbar.Collapse>
+            </Navbar.Collapse>
             <div className={'d-flex justify-content-center align-items-center'} style={{ textAlign: 'center', marginTop: '14px' }}>
-                <ThemeToggle onChange={toggleTheme}/>
-                {/* <button className="btn btn-success" onClick={toggleTheme}>
-                  {theme.type}
-                </button> */}
-              {/* <Button
-                // onClick={}
-                size="lg"
-                variant="outline-primary"
+              <ThemeToggle onChange={toggleTheme}/>
+              <Button
+                onClick={handleMobileNav}
+                size="sm"
+                // variant="outline-primary"
               >
-                Donate
-              </Button> */}
+                <FontAwesomeIcon
+                size="2x"
+                icon={'bars'}
+              />
+              </Button>
             </div>
           </Navbar>
         </div>
+
+        <MobileNav active={mobileNav} action={handleMobileNav}/>
       </Container>
     )
 }

@@ -23,9 +23,12 @@ import {
   faEnvelope,
   faSun,
   faMoon,
+  faBars,
+  faXmark,
 } from '@fortawesome/free-solid-svg-icons';
 
 config.autoAddCss = false;
+
 library.add(
   faList,
   faBorderAll,
@@ -37,7 +40,9 @@ library.add(
   faPhone,
   faEnvelope,
   faSun,
-  faMoon
+  faMoon,
+  faBars,
+  faXmark
 );
 
 function MyApp({ Component, pageProps }) {
