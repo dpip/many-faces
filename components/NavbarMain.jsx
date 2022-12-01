@@ -66,8 +66,8 @@ const NavbarMain = () => {
                 <a>Many Faces</a>
               </Link>
             </Navbar.Brand>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav" className="d-flex justify-content-center">
+            {/* <Navbar.Toggle aria-controls="basic-navbar-nav" /> */}
+            <Navbar.Collapse id="basic-navbar-nav" className="d-sm-none d-lg-flex justify-content-center">
               <Nav className="text-capitalize">
                   <Nav.Link
                   className="fj-navbar-item fj-navbar-link"
@@ -119,18 +119,22 @@ const NavbarMain = () => {
                   />
               </Nav>
             </Navbar.Collapse>
-            <div className={'d-flex justify-content-center align-items-center'} style={{ textAlign: 'center', marginTop: '14px' }}>
-              <ThemeToggle onChange={toggleTheme}/>
-              <Button
-                onClick={handleMobileNav}
-                size="sm"
-                // variant="outline-primary"
-              >
-                <FontAwesomeIcon
-                size="2x"
-                icon={'bars'}
-              />
-              </Button>
+            <div className={'d-flex justify-content-center align-items-center'}>
+              <span className={'d-none d-lg-flex'} style={{ textAlign: 'center', marginTop: '14px' }}>
+                <ThemeToggle onChange={toggleTheme}/>
+              </span>
+              <span className={'d-flex d-lg-none'}>
+                <Button
+                  onClick={handleMobileNav}
+                  size="sm"
+                  // variant="outline-primary"
+                >
+                  <FontAwesomeIcon
+                  size="2x"
+                  icon={'bars'}
+                />
+                </Button>
+              </span>
             </div>
           </Navbar>
         </div>
