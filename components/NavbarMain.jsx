@@ -15,7 +15,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const NavbarMain = () => {
     const { theme, toggleTheme } = useTheme();
     const [sticky, setSticky] = useState({ isSticky: false, offset: 0 });
-    const [mobileNav, setMobileNav] = useState(false)
+    const [mobileNav, setMobileNav] = useState({active: false, display: false})
     const headerRef = useRef(null);
 
     // handle scroll event
@@ -27,7 +27,7 @@ const NavbarMain = () => {
     };
 
     const handleMobileNav = () => {
-      setMobileNav(!mobileNav)
+      setMobileNav({active: !mobileNav.active, display: true})
     }
 
     // add/remove scroll event listener
@@ -135,7 +135,7 @@ const NavbarMain = () => {
           </Navbar>
         </div>
 
-        <MobileNav active={mobileNav} action={handleMobileNav}/>
+        <MobileNav active={mobileNav.active} action={handleMobileNav} display={mobileNav.display}/>
       </Container>
     )
 }
