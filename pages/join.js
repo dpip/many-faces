@@ -23,17 +23,21 @@ export default function Join({ join, joinApplication }) {
       </Col>
       <Container className={'mt-5 mb-5'}>
         <Row>
-          <Col className={'d-flex justify-content-center'}>
+          <Col
+            sm={12}
+            md={6}
+            className={'d-flex justify-content-center'}
+          >
             <img
+              style={{ width: '100%' }}
               src={urlFor(data.heroImage)
-                .height(400)
                 .crop('center')
                 .fit('clip')
                 .url()}
               alt="Card image cap"
             />
           </Col>
-          <Col>
+          <Col sm={12} md={6} className={'mt-4 mt-md-0'}>
             <Row>
               {data.content && (
                 <ApplyContent content={data.content} />

@@ -13,9 +13,13 @@ export default function About({ about }) {
   return (
     <PageLayout>
       <h1>{data.title}</h1>
-      <Container>
+      <Container className={'mt-5 mb-4'}>
         <Row>
-          <Col className={'d-flex justify-content-center'}>
+          <Col
+            sm={12}
+            md={6}
+            className={'d-flex justify-content-center'}
+          >
             <img
               src={urlFor(data.heroImage)
                 .height(400)

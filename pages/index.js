@@ -27,7 +27,7 @@ export default function Home({ home, application }) {
               alt="Card image cap"
             />
           </Col>
-          <Col className={'pt-sm-5'} sm={12} md={6}>
+          <Col className={'mt-5 mt-md-0'} sm={12} md={6}>
             <span>{data.ctaSnippets}</span>
             <h1 className={'bold'}>{data.title}</h1>
             <p>{data.subtitle}</p>

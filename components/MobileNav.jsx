@@ -15,18 +15,22 @@ const MobileNav = ({active, action, display}) => {
     const { theme, toggleTheme } = useTheme();
 
     return (
-
         <Container className={`mobile-nav ${active ? 'mobile-nav-active' : 'mobile-nav-nonactive'}`} style={{display: `${display ? 'block' : 'none'}`}}>
-            <Button
-                onClick={action}
-                size="sm"
-                // variant="outline-primary"
-            >
-                <FontAwesomeIcon
-                    size="2x"
-                    icon={'xmark'}
-                />
-            </Button>
+            <div className={'w-100 d-flex justify-content-between'}>
+                <div className={'d-flex justify-content-center align-items-center mt-3 mr-3'}>
+                    <ThemeToggle onChange={toggleTheme}/>
+                </div>
+                <Button
+                    onClick={action}
+                    size="sm"
+                    // variant="outline-primary"
+                >
+                    <FontAwesomeIcon
+                        size="2x"
+                        icon={'xmark'}
+                    />
+                </Button>
+            </div>
             <div 
             className={`d-flex justify-content-center`} 
             >
@@ -42,7 +46,7 @@ const MobileNav = ({active, action, display}) => {
                     className="fj-navbar-item fj-navbar-link"
                     as={() =>
                         <Link href='/apply'>
-                        <a className="fj-navbar-item fj-navbar-link text-capitalize">Apply</a>
+                        <a className="fj-navbar-item fj-navbar-link text-capitalize mt-2">Apply</a>
                         </Link>
                     }
                     />
@@ -50,7 +54,7 @@ const MobileNav = ({active, action, display}) => {
                     className="fj-navbar-item fj-navbar-link"
                     as={() =>
                         <Link href='/donate'>
-                        <a className="fj-navbar-item fj-navbar-link text-capitalize">Donate</a>
+                        <a className="fj-navbar-item fj-navbar-link text-capitalize mt-3">Donate</a>
                         </Link>
                     }
                     />
@@ -58,7 +62,7 @@ const MobileNav = ({active, action, display}) => {
                     className="fj-navbar-item fj-navbar-link"
                     as={() =>
                         <Link href='/about'>
-                        <a className="fj-navbar-item fj-navbar-link text-capitalize">About</a>
+                        <a className="fj-navbar-item fj-navbar-link text-capitalize mt-3">About</a>
                         </Link>
                     }
                     />
@@ -66,7 +70,7 @@ const MobileNav = ({active, action, display}) => {
                     className="fj-navbar-item fj-navbar-link"
                     as={() =>
                         <Link href='/join'>
-                        <a className="fj-navbar-item fj-navbar-link text-capitalize">Join</a>
+                        <a className="fj-navbar-item fj-navbar-link text-capitalize mt-3">Join</a>
                         </Link>
                     }
                     />
@@ -74,7 +78,7 @@ const MobileNav = ({active, action, display}) => {
                     className="fj-navbar-item fj-navbar-link"
                     as={() =>
                         <Link href='/blog'>
-                        <a className="fj-navbar-item fj-navbar-link text-capitalize">Blog</a>
+                        <a className="fj-navbar-item fj-navbar-link text-capitalize mt-3">Blog</a>
                         </Link>
                     }
                     />
@@ -82,13 +86,10 @@ const MobileNav = ({active, action, display}) => {
                     className="fj-navbar-item fj-navbar-link"
                     as={() =>
                         <Link href='/contact'>
-                        <a className="fj-navbar-item fj-navbar-link text-capitalize">Contact</a>
+                        <a className="fj-navbar-item fj-navbar-link text-capitalize mt-3">Contact</a>
                         </Link>
                     }
                     />
-                    <div className={'d-flex justify-content-center align-items-center'} style={{ textAlign: 'center', marginTop: '14px' }}>
-                        <ThemeToggle onChange={toggleTheme}/>
-                    </div>
                 </Nav>
                 </Navbar.Collapse>
             </Navbar>

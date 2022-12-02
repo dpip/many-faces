@@ -13,12 +13,16 @@ export default function About({ donate }) {
     <PageLayout>
       <Col>
         <Row>
-          <h1 className={'pb-5 pl-3 ml-3'}>{data.title}</h1>
+          <h1 className={'pb-2 pl-3 ml-3'}>{data.title}</h1>
         </Row>
       </Col>
       <Container className={'mt-5 mb-5'}>
         <Row>
-          <Col className={'d-flex justify-content-center'}>
+          <Col
+            sm={12}
+            md={6}
+            className={'d-flex justify-content-center'}
+          >
             <img
               src={urlFor(data.heroImage)
                 .height(400)
@@ -28,7 +32,7 @@ export default function About({ donate }) {
               alt="Card image cap"
             />
           </Col>
-          <Col>
+          <Col sm={12} md={6} className={'mt-4 mt-md-0'}>
             <Row>
               {data.content && (
                 <DonateContent content={data.content} />
