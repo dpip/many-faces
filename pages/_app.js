@@ -25,6 +25,12 @@ import {
   faMoon,
   faBars,
   faXmark,
+  faFileSignature,
+  faHandHoldingDollar,
+  faCircleInfo,
+  faHandshake,
+  faBlog,
+  faAddressCard,
 } from '@fortawesome/free-solid-svg-icons';
 
 config.autoAddCss = false;
@@ -42,7 +48,13 @@ library.add(
   faSun,
   faMoon,
   faBars,
-  faXmark
+  faXmark,
+  faFileSignature,
+  faHandHoldingDollar,
+  faCircleInfo,
+  faHandshake,
+  faBlog,
+  faAddressCard
 );
 
 function MyApp({ Component, pageProps }) {
