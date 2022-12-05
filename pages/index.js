@@ -1,13 +1,30 @@
+import { useState } from 'react';
+
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PageLayout from 'components/PageLayout';
 import Link from 'next/link';
 
-import { getHome, getApplication, urlFor } from 'lib/api';
+import {
+  getHome,
+  getApplication,
+  urlFor,
+  getPaginatedBlogs,
+} from 'lib/api';
 
-export default function Home({ home, application }) {
+import { useGetBlogsPages } from 'actions/pagination';
+
+export default function Home({ home, application, blogs }) {
   const [data] = home;
   const [apply] = application;
+  const [testimonials] = blogs;
+  const [filter, setFilter] = useState({
+    view: { list: 0 },
+    date: { asc: 0 },
+  });
+
+  const { pages, isLoadingMore, isReachingEnd, loadMore } =
+    useGetBlogsPages({ blogs, filter });
 
   return (
     <PageLayout>
@@ -69,6 +86,7 @@ export default function Home({ home, application }) {
             <p>{data.aboutDescription}</p>
           </Col>
         </Row>
+        <Row className="mb-5">{pages}</Row>
         <Row>
           <Col className={'text-center pt-2'} xs={12} sm={4}>
             <div>
@@ -170,10 +188,12 @@ export default function Home({ home, application }) {
 export async function getStaticProps() {
   const home = await getHome();
   const application = await getApplication();
+  const blogs = await getPaginatedBlogs({ offset: 0, date: 'desc' });
   return {
     props: {
       home,
       application,
+      blogs,
     },
   };
 }

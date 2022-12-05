@@ -500,9 +500,10 @@ export default createSchema({
           name: 'title',
           type: 'string',
           title: 'Title',
-          validation: (Rule) => {
-            return Rule.required();
-          },
+          validation: (Rule) => [
+            Rule.required(),
+            Rule.max(50).warning('Shorter titles are usually better'),
+          ],
         },
         {
           name: 'subtitle',
@@ -523,6 +524,12 @@ export default createSchema({
               title: 'Description',
             },
           ],
+        },
+        {
+          name: 'quote',
+          type: 'string',
+          title:
+            'Quote - only used for testimonial posts (not required)',
         },
         {
           name: 'content',

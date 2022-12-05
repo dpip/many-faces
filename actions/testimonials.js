@@ -9,7 +9,7 @@ import CardListItem from 'components/CardListItem';
 import CardListItemBlank from 'components/CardListItemBlank';
 import moment from 'moment';
 
-export const useGetBlogsPages = ({ blogs, filter }) => {
+export const useGetTestimonials = ({ blogs, filter }) => {
   useEffect(() => {
     window.__pagination__init = true;
   }, []);
@@ -45,37 +45,22 @@ export const useGetBlogsPages = ({ blogs, filter }) => {
             )
           );
       }
-      console.log(paginatedBlogs);
-      return paginatedBlogs.map((blog) =>
-        filter.view.list ? (
-          <Col key={`${blog.slug}-list`} md="9">
-            <CardListItem
-              author={blog.author}
-              title={blog.title}
-              subtitle={blog.subtitle}
-              date={moment(blog.date).format('LL')}
-              link={{
-                href: '/blogs/[slug]',
-                as: `/blogs/${blog.slug}`,
-              }}
-            />
-          </Col>
-        ) : (
-          <Col key={blog.slug} md="4">
-            <CardItem
-              author={blog.author}
-              title={blog.title}
-              subtitle={blog.subtitle}
-              date={moment(blog.date).format('LL')}
-              image={blog.coverImage}
-              link={{
-                href: '/blogs/[slug]',
-                as: `/blogs/${blog.slug}`,
-              }}
-            />
-          </Col>
-        )
-      );
+
+      return paginatedBlogs.map((blog) => (
+        <Col key={blog.slug} md="4">
+          <CardItem
+            author={blog.author}
+            title={blog.title}
+            subtitle={blog.subtitle}
+            date={moment(blog.date).format('LL')}
+            image={blog.coverImage}
+            link={{
+              href: '/blogs/[slug]',
+              as: `/blogs/${blog.slug}`,
+            }}
+          />
+        </Col>
+      ));
     },
     // here you will compute offset that will get passed into previous callback function with 'withSWR'
     // SWR: data you will get from 'withSWR' function
