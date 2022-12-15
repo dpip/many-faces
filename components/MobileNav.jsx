@@ -21,9 +21,9 @@ const MobileNav = ({active, action, display}) => {
                     <ThemeToggle onChange={toggleTheme}/>
                 </div>
                 <Button
+                    className={'mobile-nav-close'}
                     onClick={action}
                     size="sm"
-                    // variant="outline-primary"
                 >
                     <FontAwesomeIcon
                         size="2x"
