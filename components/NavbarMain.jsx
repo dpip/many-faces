@@ -125,6 +125,7 @@ const NavbarMain = () => {
               </span>
               <span className={'d-flex d-lg-none'}>
                 <Button
+                  className={'mobile-nav-menu-toggle'}
                   onClick={handleMobileNav}
                   size="sm"
                   // variant="outline-primary"
