@@ -6,6 +6,7 @@ import {
   Container
 } from 'react-bootstrap';
 import Link from 'next/link'
+import Image from 'next/image'
 import ThemeToggle from 'components/ThemeToggle';
 import { useTheme } from 'providers/ThemeProvider';
 import MobileNav from 'components/MobileNav'
@@ -59,11 +60,11 @@ const NavbarMain = () => {
             bg="transparent"
             expand="lg"
             ref={headerRef}
-            style={{maxWidth: '1140px', padding: sticky.isSticky ? '0px 30px' : '20px 0px'}}
+            style={{maxWidth: '1140px', padding: sticky.isSticky ? '5px 30px' : '20px 0px'}}
           >
-            <Navbar.Brand className="fj-navbar-brand">
+            <Navbar.Brand className="fj-navbar-brand d-flex align-items-center">
               <Link href="/">
-                <a>Many Faces</a>
+                  <Image src="/ManyFaces-nav.png" alt="Many Faces" width="180" height="24" />
               </Link>
             </Navbar.Brand>
             {/* <Navbar.Toggle aria-controls="basic-navbar-nav" /> */}
