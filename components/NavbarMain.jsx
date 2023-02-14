@@ -60,7 +60,7 @@ const NavbarMain = () => {
             bg="transparent"
             expand="lg"
             ref={headerRef}
-            style={{maxWidth: '1140px', padding: sticky.isSticky ? '5px 30px' : '20px 0px'}}
+            style={{maxWidth: '1140px', padding: sticky.isSticky ? '5px 0px' : '20px 0px'}}
           >
             <Navbar.Brand className="fj-navbar-brand d-flex align-items-center" style={{cursor: 'pointer'}}>
               <Link href="/">
