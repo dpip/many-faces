@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, forwardRef } from 'react';
 import {
   Navbar,
   Nav,
@@ -7,14 +7,14 @@ import {
 } from 'react-bootstrap';
 import Link from 'next/link'
 import Image from 'next/image'
-import ThemeToggle from 'components/ThemeToggle';
-import { useTheme } from 'providers/ThemeProvider';
 import MobileNav from 'components/MobileNav'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
+import { getDonate, urlFor } from 'lib/api';
 
 const NavbarMain = () => {
-    const { theme, toggleTheme } = useTheme();
+    // TODO - using donate data from static props returns theme props instead of fetched data from donate schema.
+    // Look into parent props
+    // const [data] = donate;
     const [sticky, setSticky] = useState({ isSticky: false, offset: 0 });
     const [mobileNav, setMobileNav] = useState({active: false, display: false})
     const headerRef = useRef(null);
@@ -33,7 +33,7 @@ const NavbarMain = () => {
 
     // add/remove scroll event listener
     useEffect(() => {
-      var header = headerRef.current.getBoundingClientRect();
+      let header = headerRef.current.getBoundingClientRect();
       const handleScrollEvent = () => {
         handleScroll(header.top, header.height)
       }
@@ -50,8 +50,8 @@ const NavbarMain = () => {
         <div 
           className={`${sticky.isSticky ? 'sticky' : ''} p-o d-flex justify-content-center`} 
           style={{
-            // padding: sticky.isSticky ? '0px 100px 0px 100px' : '0px 15px 0px 15px', 
-            boxShadow: sticky.isSticky ? '0px 1px 10px #999' : '', 
+            padding: sticky.isSticky ? '0px 100px 0px 100px' : '0px 0px 0px 0px', 
+            boxShadow: sticky.isSticky ? '0px 1px 10px #999' : ' ', 
             borderRadius: '2px'
           }}>
           <Navbar
@@ -62,12 +62,13 @@ const NavbarMain = () => {
             ref={headerRef}
             style={{maxWidth: '1140px', padding: sticky.isSticky ? '5px 30px' : '20px 0px'}}
           >
-            <Navbar.Brand className="fj-navbar-brand d-flex align-items-center">
+            <Navbar.Brand className="fj-navbar-brand d-flex align-items-center" style={{cursor: 'pointer'}}>
               <Link href="/">
+                <a>
                   <Image src="/ManyFaces-nav.png" alt="Many Faces" width="180" height="24" />
+                </a>   
               </Link>
             </Navbar.Brand>
-            {/* <Navbar.Toggle aria-controls="basic-navbar-nav" /> */}
             <Navbar.Collapse id="basic-navbar-nav" className="d-sm-none d-lg-flex justify-content-center">
               <Nav className="text-capitalize">
                   <Nav.Link
@@ -81,24 +82,8 @@ const NavbarMain = () => {
                   <Nav.Link
                   className="fj-navbar-item fj-navbar-link"
                   as={() =>
-                    <Link href='/donate'>
-                      <a className="fj-navbar-item fj-navbar-link text-capitalize">Donate</a>
-                    </Link>
-                  }
-                  />
-                  <Nav.Link
-                  className="fj-navbar-item fj-navbar-link"
-                  as={() =>
                     <Link href='/about'>
                       <a className="fj-navbar-item fj-navbar-link text-capitalize">About</a>
-                    </Link>
-                  }
-                  />
-                  <Nav.Link
-                  className="fj-navbar-item fj-navbar-link"
-                  as={() =>
-                    <Link href='/join'>
-                      <a className="fj-navbar-item fj-navbar-link text-capitalize">Join</a>
                     </Link>
                   }
                   />
@@ -121,15 +106,26 @@ const NavbarMain = () => {
               </Nav>
             </Navbar.Collapse>
             <div className={'d-flex justify-content-center align-items-center'}>
-              <span className={'d-none d-lg-flex'} style={{ textAlign: 'center', marginTop: '14px' }}>
-                <ThemeToggle onChange={toggleTheme}/>
+              <span className={'d-none d-lg-flex'} style={{ textAlign: 'center' }}>
+                <div
+                  style={{ textAlign: 'center'}}
+                >
+                  <a
+                    href={'https://buy.stripe.com/test_bIYcOh3IjdIu2KQcMM'}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Button size="lg" variant="outline-primary">
+                      Donate
+                    </Button>
+                  </a>
+                </div>
               </span>
               <span className={'d-flex d-lg-none'}>
                 <Button
                   className={'mobile-nav-menu-toggle'}
                   onClick={handleMobileNav}
                   size="sm"
-                  // variant="outline-primary"
                 >
                   <FontAwesomeIcon
                   size="2x"
@@ -147,3 +143,12 @@ const NavbarMain = () => {
 }
 
 export default NavbarMain;
+
+export async function getStaticProps() {
+  const donate = await getDonate();
+  return {
+    props: {
+      donate,
+    },
+  };
+}
