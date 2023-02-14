@@ -28,7 +28,7 @@ export default function Home({ home, application, blogs }) {
 
   return (
     <PageLayout>
-      <Container>
+      <Container className={'mt-4'}>
         <Row>
           <Col
             className={'d-flex justify-content-center'}
@@ -36,22 +36,33 @@ export default function Home({ home, application, blogs }) {
             md={6}
           >
             <img
+              style={{ objectFit: 'contain' }}
               src={urlFor(data.heroImage)
-                .height(400)
+                .height(320)
                 .crop('center')
                 .fit('clip')
                 .url()}
               alt="Card image cap"
             />
           </Col>
-          <Col className={'mt-5 mt-md-0'} sm={12} md={6}>
-            <span>{data.ctaSnippets}</span>
-            <h1 className={'bold'}>{data.title}</h1>
-            <p>{data.subtitle}</p>
+          <Col className={'mt-3'} sm={12} md={6}>
+            <span
+              className={'mt-5 text-uppercase'}
+              style={{ letterSpacing: '0.08em' }}
+            >
+              {data.ctaSnippets}
+            </span>
+            <h1
+              className={'mt-3'}
+              style={{ fontWeight: '800', fontSize: '48px' }}
+            >
+              {data.title}
+            </h1>
+            <p className={'mt-3'}>{data.subtitle}</p>
             <Row>
               <Col
                 className={
-                  'text-center pt-2 d-flex justify-content-start'
+                  'text-center pt-2 d-flex justify-content-start mt-3'
                 }
               >
                 <div
@@ -75,6 +86,56 @@ export default function Home({ home, application, blogs }) {
           </Col>
         </Row>
       </Container>
+      <Container className={'pt-5 mt-1'}>
+        <Row>
+          <Col className={'text-center pt-2 mt-5'}>
+            <h5>{data.donorsTitle}</h5>
+          </Col>
+        </Row>
+      </Container>
+      <Container className={'mt-3 mb-5'}>
+        <Row
+          className={
+            'd-flex justify-content-center align-items-center'
+          }
+        >
+          {data.donorImages.map((image, index) => {
+            return (
+              <Col
+                key={index}
+                className={'text-center mt-md-4'}
+                // xs={12}
+                // sm={4}
+                // md={4}
+                // lg={4}
+              >
+                <img
+                  className={'text-center'}
+                  src={urlFor(image)
+                    .height(75)
+                    .crop('center')
+                    .fit('clip')
+                    .url()}
+                  alt="Card image cap"
+                />
+              </Col>
+            );
+          })}
+        </Row>
+      </Container>
+      <Container className={'pt-2'}>
+        <Row>
+          <Col className={'text-center'}>
+            <div style={{ textAlign: 'center' }}>
+              <Link href="/join">
+                <Button size="lg" variant="outline-secondary">
+                  Join the initiative
+                </Button>
+              </Link>
+            </div>
+          </Col>
+        </Row>
+      </Container>
       <Container className={'mt-5'}>
         <Row>
           <Col className={'text-center pt-2'}>
@@ -86,12 +147,11 @@ export default function Home({ home, application, blogs }) {
             <p>{data.aboutDescription}</p>
           </Col>
         </Row>
-        <Row className="mb-5">{pages}</Row>
-        <Row>
+        {/* <Row className={'mb-2'}>
           <Col className={'text-center pt-2'} xs={12} sm={4}>
             <div>
               <FontAwesomeIcon
-                className="mb-3 mt-5"
+                className="mb-3 mt-5 orange"
                 size="4x"
                 icon={'user'}
               />
@@ -102,7 +162,7 @@ export default function Home({ home, application, blogs }) {
           <Col className={'text-center pt-2'} xs={12} sm={4}>
             <div>
               <FontAwesomeIcon
-                className="mb-3 mt-5"
+                className="mb-3 mt-5 red"
                 size="4x"
                 icon={'gift'}
               />
@@ -113,7 +173,7 @@ export default function Home({ home, application, blogs }) {
           <Col className={'text-center pt-2'} xs={12} sm={4}>
             <div>
               <FontAwesomeIcon
-                className="mb-3 mt-5"
+                className="mb-3 mt-5 teal"
                 size="4x"
                 icon={'graduation-cap'}
               />
@@ -121,40 +181,30 @@ export default function Home({ home, application, blogs }) {
             Learn alongside the industry's best and make invaluable
             connections.
           </Col>
+        </Row> */}
+        <Container className={'pt-5 pb-5'}>
+          <Row>
+            <Col className={'text-center'}>
+              <div style={{ textAlign: 'center' }}>
+                <Link href="/join">
+                  <Button size="lg" variant="outline-secondary">
+                    More about the initiative
+                  </Button>
+                </Link>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+        <Row
+          className={'text-center justify-content-center pt-4 pb-5'}
+        >
+          <h3 className={'text-center'}>
+            What interns think about the program
+          </h3>
         </Row>
+        <Row className="mb-5">{pages}</Row>
       </Container>
-      <Container>
-        <Row>
-          <Col className={'text-center pt-2 mt-5'}>
-            <h2>{data.donorsTitle}</h2>
-          </Col>
-        </Row>
-      </Container>
-      <Container className={'mt-3 mb-5'}>
-        <Row>
-          {data.donorImages.map((image, index) => {
-            return (
-              <Col
-                key={index}
-                className={'text-center mt-md-5 pt-2'}
-                xs={12}
-                sm={4}
-              >
-                <img
-                  className={'text-center mt-4'}
-                  src={urlFor(image)
-                    .height(100)
-                    .crop('center')
-                    .fit('clip')
-                    .url()}
-                  alt="Card image cap"
-                />
-              </Col>
-            );
-          })}
-        </Row>
-      </Container>
-      <Container>
+      {/* <Container>
         <Row>
           <Col
             className={
@@ -177,7 +227,7 @@ export default function Home({ home, application, blogs }) {
             </div>
           </Col>
         </Row>
-      </Container>
+      </Container> */}
       <hr />
       {/* will recomment a blog row for the main page */}
       {/* <Row className="mb-5">{pages}</Row> */}
