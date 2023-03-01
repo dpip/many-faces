@@ -9,7 +9,6 @@ import { getAbout, urlFor } from 'lib/api';
 
 export default function About({ about }) {
   const [data] = about;
-  console.log('about data', data);
   return (
     <PageLayout>
       <h1>{data.title}</h1>
@@ -32,7 +31,6 @@ export default function About({ about }) {
         </Row>
       </Container>
       {data.content && <AboutContent content={data.content} />}
-      <hr />
     </PageLayout>
   );
 }

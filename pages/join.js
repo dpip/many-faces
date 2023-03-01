@@ -79,7 +79,6 @@ export default function Join({ join, joinApplication }) {
           </Col>
         </Row>
       </Container>
-      <hr />
     </PageLayout>
   );
 }

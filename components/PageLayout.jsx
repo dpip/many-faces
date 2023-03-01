@@ -16,13 +16,13 @@ const variants = {
 const PageLayout = ({children, className}) => {
     const { theme, toggleTheme } = useTheme();
     return (
-        <div className={theme.type}>
+        <div id="test" className={theme.type} style={{position: 'relative', height: '100vh'}}>
         <Head>
             <link rel="preconnect" href="https://fonts.googleapis.com" />
             <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
             <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet" />
         </Head>
-        <Container>
+        <Container style={{height: '100%', display: 'flex', flexDirection: 'column'}}>
             <NavbarMain
                 theme={theme}
                 toggleTheme={toggleTheme}
@@ -33,6 +33,7 @@ const PageLayout = ({children, className}) => {
                 exit={{ opacity: 0 }}
                 variants={variants}
                 transition={{ type: 'linear' }}
+                style={{flex: '1'}}
                 className="
                         flex flex-col items-start w-full pt-10
                         px-8 sm:px-16 md:px-36 lg:px-52 xl:px-80 2xl:px-96

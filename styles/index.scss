@@ -1,11 +1,13 @@
 html,
 body {
     height: 100%;
+    width: 100%;
     font-family: Nunito, sans-serif;
     font-style: normal;
     font-size: 14px;
     font-weight: 300;
     background-color: #f4f7f9;
+    position: relative;
 }
 
 .clickable:hover {
@@ -404,7 +406,9 @@ body {
     // padding: 40px;
     font-size: 20px;
     text-align: center;
-
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid rgba(0, 0, 0, .1);
     a {
         color: #63696e;
     }

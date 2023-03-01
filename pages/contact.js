@@ -236,7 +236,6 @@ export default function Contact({ contact }) {
           ) : null}
         </Col>
       </Row> */}
-      <hr />
     </PageLayout>
   );
 }

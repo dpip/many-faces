@@ -26,7 +26,6 @@ export default function Home({ blogs }) {
           setFilter({ ...filter, [option]: value })
         }
       /> */}
-      <hr />
     </PageLayout>
   );
 }

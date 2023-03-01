@@ -228,7 +228,6 @@ export default function Home({ home, application, blogs }) {
           </Col>
         </Row>
       </Container> */}
-      <hr />
       {/* will recomment a blog row for the main page */}
       {/* <Row className="mb-5">{pages}</Row> */}
     </PageLayout>

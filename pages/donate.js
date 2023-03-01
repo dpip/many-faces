@@ -8,7 +8,6 @@ import { getDonate, urlFor } from 'lib/api';
 
 export default function About({ donate }) {
   const [data] = donate;
-  console.log('donate data', data);
   return (
     <PageLayout>
       <Col>
@@ -60,7 +59,6 @@ export default function About({ donate }) {
           </Col>
         </Row>
       </Container>
-      <hr />
     </PageLayout>
   );
 }

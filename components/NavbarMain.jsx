@@ -136,7 +136,6 @@ const NavbarMain = () => {
             </div>
           </Navbar>
         </div>
-
         <MobileNav active={mobileNav.active} action={handleMobileNav} display={mobileNav.display}/>
       </Container>
     )

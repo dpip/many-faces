@@ -9,7 +9,6 @@ import { getHome, getApply, getApplication, urlFor } from 'lib/api';
 export default function About({ apply, application }) {
   const [data] = apply;
   const [pdf] = application;
-  console.log('about data', data);
   return (
     <PageLayout>
       <Col>
@@ -75,7 +74,6 @@ export default function About({ apply, application }) {
           </Col>
         </Row>
       </Container>
-      <hr />
     </PageLayout>
   );
 }
