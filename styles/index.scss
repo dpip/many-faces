@@ -5,7 +5,7 @@ body {
     font-style: normal;
     font-size: 14px;
     font-weight: 300;
-    background-color: #f4f7f9;
+    background-color: #fff;
 }
 
 .clickable:hover {
@@ -443,14 +443,14 @@ body {
     }
         .mobile-nav-close {
             background-color: #443C36 !important;
-            color: #f4f7f9;
+            color: #fff;
             outline: #443C36;
             border: 4px #443C36;
             margin-top: 4px;
 
             &:hover {
                 background-color: #443C36;
-                color: #f4f7f9;
+                color: #fff;
             }
         }
         .day-night-toggle.react-toggle {
@@ -534,7 +534,7 @@ body {
 //     }
 // }
     .nav-wrapper {
-        background-color: #f4f7f9 !important;
+        background-color: #fff !important;
     }
     .sticky {
         position: fixed;
@@ -542,7 +542,7 @@ body {
         width: 100%;
         transition: all 0.5s ease;
         animation: smoothScroll 1s forwards;
-        background-color: #f4f7f9 !important;
+        background-color: #fff !important;
         z-index: 100;
         // width: 100vw !important;
     }
@@ -560,7 +560,7 @@ body {
     .mobile-nav {
         position: fixed;
         z-index: 200;
-        background-color: #f4f7f9 !important;
+        background-color: #fff !important;
         top: 0px;
         right: 0px;
         height: 100vh;
@@ -571,13 +571,13 @@ body {
         // transition: all 1s ease-out;
     }
     .mobile-nav-close {
-        background-color: #f4f7f9;
+        background-color: #fff;
         color: #443C36;
-        outline: #f4f7f9;
-        border: 4px #f4f7f9;
+        outline: #fff;
+        border: 4px #fff;
         margin-top: 4px;
         &:hover {
-            background-color: #f4f7f9;
+            background-color: #fff;
             color: #443C36;
         }
     }
