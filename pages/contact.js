@@ -1,4 +1,4 @@
-import { Media, Image, Row, Col } from 'react-bootstrap';
+import { Media, Image, Row, Col, Container } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faFacebook,
@@ -17,29 +17,46 @@ export default function Contact({ contact }) {
           <h1 className={'pb-5 pl-3'}>{data.title}</h1>
         </Row>
       </Col>
-      <Row className={'d-flex flex-column flex-md-row'}>
-        <Col sm={2} md={2} className={'mr-4'}>
-          <Image
-            roundedCircle
-            width={120}
-            height={120}
-            className="mr-3"
-            src={urlFor(data.founderAvatar)
-              .height(120)
-              .crop('center')
-              .fit('clip')
-              .url()}
-            alt="Founder image"
-          />
-        </Col>
-        <Col sm={12} md={10} className={'mt-4 mt-md-0'}>
-          <h5 className="font-weight-bold pb-2 mb-0">
-            {data.founderTitle}
-          </h5>
-          <p className="welcome-text">{data.contactIntro}</p>
-          <Row className={''}>
-            <Col className={'d-flex text-center pt-2 pl-0'}>
-              <div className={'d-flex mr-5'}>
+      <Container className={'mb-5'}>
+        <Row className={'d-flex flex-column flex-md-row'}>
+          {/* <Col sm={2} md={2} className={'mr-4'}>
+            <Image
+              roundedCircle
+              width={120}
+              height={120}
+              className="mr-3"
+              src={urlFor(data.founderAvatar)
+                .height(120)
+                .crop('center')
+                .fit('clip')
+                .url()}
+              alt="Founder image"
+            />
+          </Col> */}
+          <Col
+            sm={12}
+            md={6}
+            className={'d-flex justify-content-center'}
+          >
+            <img
+              style={{ width: '100%' }}
+              src={urlFor(data.founderAvatar)
+                .crop('center')
+                .fit('clip')
+                .url()}
+              alt="Card image cap"
+            />
+          </Col>
+          <Col sm={12} md={6} className={'mt-4 mt-md-0'}>
+            <h5 className="font-weight-bold pb-2 mb-0">
+              {data.founderTitle}
+            </h5>
+            <p className="welcome-text">{data.contactIntro}</p>
+            <Col
+              className={'d-flex text-center pt-2 pl-0'}
+              style={{ flexDirection: 'column' }}
+            >
+              <div className={'d-flex mr-5 mb-4'}>
                 <a
                   className={
                     'd-flex justify-content-center align-items-center'
@@ -58,11 +75,11 @@ export default function Contact({ contact }) {
                       'h-100 d-flex justify-content-center align-items-center'
                     }
                   >
-                    {/* {data.emailTitle} */}
+                    {data.emailTitle}
                   </div>
                 </a>
               </div>
-              <div className={'d-flex mr-5'}>
+              <div className={'d-flex mr-5 mb-4'}>
                 <a
                   className={
                     'd-flex justify-content-center align-items-center'
@@ -81,11 +98,11 @@ export default function Contact({ contact }) {
                       'h-100 d-flex justify-content-center align-items-center'
                     }
                   >
-                    {/* {data.phoneTitle} */}
+                    {data.phoneTitle}
                   </div>
                 </a>
               </div>
-              <div className={'d-flex mr-5'}>
+              <div className={'d-flex mr-5 mb-4'}>
                 <a
                   className={
                     'd-flex justify-content-center align-items-center'
@@ -104,12 +121,12 @@ export default function Contact({ contact }) {
                       'h-100 d-flex justify-content-center align-items-center'
                     }
                   >
-                    {/* {data.facebookTitle} */}
+                    {data.facebookTitle}
                   </div>
                 </a>
               </div>
               {data.instagram ? (
-                <div className={'d-flex'}>
+                <div className={'d-flex  mb-4'}>
                   <a
                     className={
                       'd-flex justify-content-center align-items-center'
@@ -134,9 +151,9 @@ export default function Contact({ contact }) {
                 </div>
               ) : null}
             </Col>
-          </Row>
-        </Col>
-      </Row>
+          </Col>
+        </Row>
+      </Container>
 
       {/* <Row className={'pl-5 ml-5'}>
         <Col className={'d-flex text-center pt-2'}>
@@ -236,7 +253,6 @@ export default function Contact({ contact }) {
           ) : null}
         </Col>
       </Row> */}
-      <hr />
     </PageLayout>
   );
 }
