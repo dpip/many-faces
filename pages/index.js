@@ -86,67 +86,82 @@ export default function Home({ home, application, blogs }) {
           </Col>
         </Row>
       </Container>
-      <Container className={'pt-5 mt-1'}>
-        <Row>
-          <Col className={'text-center pt-2 mt-5'}>
-            <h5>{data.donorsTitle}</h5>
-          </Col>
-        </Row>
-      </Container>
-      <Container className={'mt-3 mb-5'}>
-        <Row
-          className={
-            'd-flex justify-content-center align-items-center'
-          }
-        >
-          {data.donorImages.map((image, index) => {
-            return (
-              <Col
-                key={index}
-                className={'text-center mt-md-4'}
-                // xs={12}
-                // sm={4}
-                // md={4}
-                // lg={4}
-              >
-                <img
-                  className={'text-center'}
-                  src={urlFor(image)
-                    .height(75)
-                    .crop('center')
-                    .fit('clip')
-                    .url()}
-                  alt="Card image cap"
-                />
-              </Col>
-            );
-          })}
-        </Row>
-      </Container>
-      <Container className={'pt-2'}>
-        <Row>
-          <Col className={'text-center'}>
-            <div style={{ textAlign: 'center' }}>
-              <Link href="/join">
-                <Button size="lg" variant="outline-secondary">
-                  Join the initiative
-                </Button>
-              </Link>
-            </div>
-          </Col>
-        </Row>
-      </Container>
-      <Container className={'mt-5'}>
+      {/* ABOUT SECTION */}
+      <Container className={'pt-5 mt-5'}>
         <Row>
           <Col className={'text-center pt-2'}>
             <h1>{data.aboutTitle}</h1>
           </Col>
         </Row>
         <Row>
-          <Col className={'text-center pt-2'}>
+          <Col className={'text-center pt-4'}>
             <p>{data.aboutDescription}</p>
           </Col>
         </Row>
+        <Container className={'pt-4 pb-3'}>
+          <Row>
+            <Col className={'text-center'}>
+              <div style={{ textAlign: 'center' }}>
+                <Link href="/join">
+                  <Button size="lg" variant="outline-secondary">
+                    More about the initiative
+                  </Button>
+                </Link>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+        {/* DONORS SECTION */}
+        <Container>
+          <Row>
+            <Col className={'text-center pt-2 mt-5'}>
+              <h4>{data.donorsTitle}</h4>
+            </Col>
+          </Row>
+        </Container>
+        <Container className={'mt-3 mb-5'}>
+          <Row
+            className={
+              'd-flex justify-content-center align-items-center'
+            }
+          >
+            {data.donorImages.map((image, index) => {
+              return (
+                <Col
+                  key={index}
+                  className={'text-center mt-md-4'}
+                  // xs={12}
+                  // sm={4}
+                  // md={4}
+                  // lg={4}
+                >
+                  <img
+                    className={'text-center'}
+                    src={urlFor(image)
+                      .height(75)
+                      .crop('center')
+                      .fit('clip')
+                      .url()}
+                    alt="Card image cap"
+                  />
+                </Col>
+              );
+            })}
+          </Row>
+        </Container>
+        <Container className={'pt-2 pb-4 mb-4'}>
+          <Row>
+            <Col className={'text-center'}>
+              <div style={{ textAlign: 'center' }}>
+                <Link href="/join">
+                  <Button size="lg" variant="outline-secondary">
+                    Join the initiative
+                  </Button>
+                </Link>
+              </div>
+            </Col>
+          </Row>
+        </Container>
         {/* <Row className={'mb-2'}>
           <Col className={'text-center pt-2'} xs={12} sm={4}>
             <div>
@@ -182,27 +197,14 @@ export default function Home({ home, application, blogs }) {
             connections.
           </Col>
         </Row> */}
-        <Container className={'pt-5 pb-5'}>
-          <Row>
-            <Col className={'text-center'}>
-              <div style={{ textAlign: 'center' }}>
-                <Link href="/join">
-                  <Button size="lg" variant="outline-secondary">
-                    More about the initiative
-                  </Button>
-                </Link>
-              </div>
-            </Col>
-          </Row>
-        </Container>
-        <Row
+        {/* <Row
           className={'text-center justify-content-center pt-4 pb-5'}
         >
           <h3 className={'text-center'}>
             What interns think about the program
           </h3>
         </Row>
-        <Row className="mb-5">{pages}</Row>
+        <Row className="mb-5">{pages}</Row> */}
       </Container>
       {/* <Container>
         <Row>
@@ -228,7 +230,6 @@ export default function Home({ home, application, blogs }) {
           </Col>
         </Row>
       </Container> */}
-      <hr />
       {/* will recomment a blog row for the main page */}
       {/* <Row className="mb-5">{pages}</Row> */}
     </PageLayout>
