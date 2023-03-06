@@ -4,11 +4,18 @@ import { Container, Row, Col, Button } from 'react-bootstrap';
 import PageLayout from 'components/PageLayout';
 import ApplyContent from 'components/AboutContent';
 
-import { getHome, getApply, getApplication, urlFor } from 'lib/api';
+import {
+  getHome,
+  getApply,
+  getApplication,
+  getContact,
+  urlFor,
+} from 'lib/api';
 
-export default function About({ apply, application }) {
+export default function About({ apply, application, contact }) {
   const [data] = apply;
   const [pdf] = application;
+  const [email] = contact;
   console.log('about data', data);
   return (
     <PageLayout>
@@ -38,6 +45,20 @@ export default function About({ apply, application }) {
               {data.content && (
                 <ApplyContent content={data.content} />
               )}
+              <div className={'d-flex'}>
+                <span>
+                  Interested? Download an application and send a
+                  completed copy over to{' '}
+                  <a
+                    href={`${email.email}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {email.emailTitle}
+                  </a>
+                  .
+                </span>
+              </div>
             </Row>
             <Row>
               <Col
@@ -61,7 +82,7 @@ export default function About({ apply, application }) {
                   style={{ textAlign: 'center' }}
                 >
                   <a
-                    href={'mailto:brian@townbrewing.com'}
+                    href={`mailto:${email.email}`}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -83,10 +104,12 @@ export default function About({ apply, application }) {
 export async function getStaticProps() {
   const apply = await getApply();
   const application = await getApplication();
+  const contact = await getContact();
   return {
     props: {
       apply,
       application,
+      contact,
     },
   };
 }

@@ -195,6 +195,7 @@ body {
             letter-spacing: 0.8px;
             font-size: 18px;
             text-transform: uppercase;
+            text-decoration: none;
 
             &.active {
                 color: #dba919;
@@ -202,7 +203,8 @@ body {
 
             &:hover,
             &:focus {
-                color: #dba919;
+                // color: #dba919;
+                border-bottom: 2px solid #dba919;
             }
         }
     }
@@ -607,4 +609,15 @@ body {
         100% {
             transform: translateX(300px);
         }
+    }
+
+    .activeBrand {
+        // display: none;
+        border-bottom: 2px solid #dba919;
+    }
+    .fj-navbar-item {
+        border-bottom: 2px solid #fff;
+        &.activeRoute {
+                border-bottom: 2px solid #dba919;
+            }
     }

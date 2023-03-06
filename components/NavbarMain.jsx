@@ -6,6 +6,7 @@ import {
   Container
 } from 'react-bootstrap';
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import Image from 'next/image'
 import MobileNav from 'components/MobileNav'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -15,10 +16,13 @@ const NavbarMain = () => {
     // TODO - using donate data from static props returns theme props instead of fetched data from donate schema.
     // Look into parent props
     // const [data] = donate;
+    const router = useRouter()
+    const currentRoute = router.pathname
     const [sticky, setSticky] = useState({ isSticky: false, offset: 0 });
     const [mobileNav, setMobileNav] = useState({active: false, display: false})
     const headerRef = useRef(null);
 
+    console.log('route', currentRoute)
     // handle scroll event
     const handleScroll = (elTopOffset, elHeight) => {
       if (window.pageYOffset > (elTopOffset + elHeight)) {
@@ -64,7 +68,7 @@ const NavbarMain = () => {
           >
             <Navbar.Brand className="fj-navbar-brand d-flex align-items-center" style={{cursor: 'pointer'}}>
               <Link href="/">
-                <a>
+                <a style={{display: 'flex', justifyContent: 'center'}}>
                   <Image src="/ManyFaces-nav.png" alt="Many Faces" width="180" height="24" />
                 </a>   
               </Link>
@@ -72,10 +76,10 @@ const NavbarMain = () => {
             <Navbar.Collapse id="basic-navbar-nav" className="d-sm-none d-lg-flex justify-content-center">
               <Nav className="text-capitalize">
                   <Nav.Link
-                  className="fj-navbar-item fj-navbar-link"
+                  className={`fj-navbar-item fj-navbar-link`}
                   as={() =>
                     <Link href='/apply'>
-                      <a className="fj-navbar-item fj-navbar-link text-capitalize">Apply</a>
+                      <a className={`fj-navbar-item fj-navbar-link text-capitalize ${currentRoute === '/apply' ? 'activeRoute' : ''}`}>Apply</a>
                     </Link>
                   }
                   />
@@ -83,7 +87,7 @@ const NavbarMain = () => {
                   className="fj-navbar-item fj-navbar-link"
                   as={() =>
                     <Link href='/about'>
-                      <a className="fj-navbar-item fj-navbar-link text-capitalize">About</a>
+                      <a className={`fj-navbar-item fj-navbar-link text-capitalize ${currentRoute === '/about' ? 'activeRoute' : ''}`}>About</a>
                     </Link>
                   }
                   />
@@ -91,7 +95,7 @@ const NavbarMain = () => {
                   className="fj-navbar-item fj-navbar-link"
                   as={() =>
                     <Link href='/blog'>
-                      <a className="fj-navbar-item fj-navbar-link text-capitalize">Blog</a>
+                      <a className={`fj-navbar-item fj-navbar-link text-capitalize ${currentRoute === '/blog' ? 'activeRoute' : ''}`}>Blog</a>
                     </Link>
                   }
                   />
@@ -99,7 +103,7 @@ const NavbarMain = () => {
                   className="fj-navbar-item fj-navbar-link"
                   as={() =>
                     <Link href='/contact'>
-                      <a className="fj-navbar-item fj-navbar-link text-capitalize">Contact</a>
+                      <a className={`fj-navbar-item fj-navbar-link text-capitalize ${currentRoute === '/contact' ? 'activeRoute' : ''}`}>Contact</a>
                     </Link>
                   }
                   />
