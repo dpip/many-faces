@@ -621,3 +621,9 @@ body {
                 border-bottom: 2px solid #dba919;
             }
     }
+
+    @media only screen and (max-width: 600px) {
+        .navbar-main {
+            padding: 0px 28px !important;
+        }
+    }

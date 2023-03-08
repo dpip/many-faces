@@ -52,7 +52,7 @@ const NavbarMain = () => {
     return (
       <Container style={{height: '100px'}}>
         <div 
-          className={`${sticky.isSticky ? 'sticky' : ''} p-o d-flex justify-content-center`} 
+          className={`navbar-main ${sticky.isSticky ? 'sticky' : ''} p-o d-flex justify-content-center`} 
           style={{
             padding: sticky.isSticky ? '0px 100px 0px 100px' : '0px 0px 0px 0px', 
             boxShadow: sticky.isSticky ? '0px 1px 10px #999' : ' ', 
