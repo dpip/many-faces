@@ -102,7 +102,7 @@ export default function Home({ home, application, blogs }) {
           <Row>
             <Col className={'text-center'}>
               <div style={{ textAlign: 'center' }}>
-                <Link href="/join">
+                <Link href="/about">
                   <Button size="lg" variant="outline-secondary">
                     More about the initiative
                   </Button>
