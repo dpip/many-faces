@@ -16,17 +16,17 @@ const MobileNav = ({active, action, display}) => {
 
     return (
         <Container className={`mobile-nav ${active ? 'mobile-nav-active' : 'mobile-nav-nonactive'}`} style={{display: `${display ? 'block' : 'none'}`}}>
-            <div className={'w-100 d-flex justify-content-between'}>
-                <div className={'d-flex justify-content-center align-items-center mt-3 mr-3'}>
+            <div className={'w-100 d-flex justify-content-end'}>
+                {/* <div className={'d-flex justify-content-center align-items-center mt-3 mr-3'}>
                     <ThemeToggle onChange={toggleTheme}/>
-                </div>
+                </div> */}
                 <Button
-                    className={'mobile-nav-close'}
+                    className={'mobile-nav-close mt-3'}
                     onClick={action}
                     size="sm"
                 >
                     <FontAwesomeIcon
-                        size="2x"
+                        size="3x"
                         icon={'xmark'}
                     />
                 </Button>
@@ -36,7 +36,7 @@ const MobileNav = ({active, action, display}) => {
             >
             <Navbar
                 id={'navbar'}
-                className={`fj-navbar fj-nav-base`}
+                className={`fj-navbar fj-nav-base mt-3`}
                 bg="transparent"
                 expand="lg"
             >
@@ -60,23 +60,6 @@ const MobileNav = ({active, action, display}) => {
                             }
                         />
                     <span style={{border: '0', borderTop: '1px solid rgba(0,0,0,.1)'}} />
-                        <Nav.Link
-                            className="fj-navbar-item fj-navbar-link"
-                            as={() =>
-                                <Link href='/donate'>
-                                    <a className="fj-navbar-item fj-navbar-link text-capitalize mt-2 ml-0 pt-2">
-                                        <div className={'pr-2'}>
-                                        <FontAwesomeIcon
-                                            size="1x"
-                                            icon={'hand-holding-dollar'}
-                                        />
-                                        &nbsp;&nbsp;Donate
-                                        </div>
-                                    </a>
-                                </Link>
-                            }
-                        />
-                    <span style={{border: '0', borderTop: '1px solid rgba(0,0,0,.1)'}} />
 
                         <Nav.Link
                             className="fj-navbar-item fj-navbar-link"
@@ -91,23 +74,6 @@ const MobileNav = ({active, action, display}) => {
                                     </div>
                                     &nbsp;&nbsp;About
                                 </a>
-                                </Link>
-                            }
-                        />
-                    <span style={{border: '0', borderTop: '1px solid rgba(0,0,0,.1)'}} />
-                    
-                        <Nav.Link
-                            className="fj-navbar-item fj-navbar-link"
-                            as={() =>
-                                <Link href='/join'>
-                                <a className="fj-navbar-item fj-navbar-link text-capitalize mt-2 ml-0 d-flex align-items-center pt-2">
-                                    <div className={'pr-0'}>
-                                        <FontAwesomeIcon
-                                            size="1x"
-                                            icon={'handshake'}
-                                        />
-                                    </div>
-                                    &nbsp;&nbsp;Join</a>
                                 </Link>
                             }
                         />
@@ -147,6 +113,18 @@ const MobileNav = ({active, action, display}) => {
                             }
                         />
                     <span style={{border: '0', borderTop: '1px solid rgba(0,0,0,.1)'}} />
+
+                    <div className={'mt-5'} style={{ textAlign: 'center'}} >
+                        <a
+                        href={'https://buy.stripe.com/test_bIYcOh3IjdIu2KQcMM'}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >
+                            <Button size="lg" variant="outline-primary">
+                                Donate
+                            </Button>
+                        </a>
+                    </div>
                 </Nav>
                 </Navbar.Collapse>
             </Navbar>
