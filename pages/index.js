@@ -149,7 +149,7 @@ export default function Home({ home, application, blogs }) {
             })}
           </Row>
         </Container>
-        <Container className={'pt-2 pb-4 mb-4'}>
+        {/* <Container className={'pt-2 pb-4 mb-4'}>
           <Row>
             <Col className={'text-center'}>
               <div style={{ textAlign: 'center' }}>
@@ -161,7 +161,7 @@ export default function Home({ home, application, blogs }) {
               </div>
             </Col>
           </Row>
-        </Container>
+        </Container> */}
         {/* <Row className={'mb-2'}>
           <Col className={'text-center pt-2'} xs={12} sm={4}>
             <div>
