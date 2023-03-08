@@ -525,3 +525,16 @@ body {
                 border-bottom: 2px solid #dba919;
             }
     }
+
+    .partners-container {
+        display: flex !important;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .partners-logo {
+        margin: 10px 10px;
+        min-width: 100px;
+    }

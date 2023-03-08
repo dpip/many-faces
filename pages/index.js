@@ -120,16 +120,12 @@ export default function Home({ home, application, blogs }) {
           </Row>
         </Container>
         <Container className={'mt-3 mb-5'}>
-          <Row
-            className={
-              'd-flex justify-content-center align-items-center'
-            }
-          >
+          <Row className={'partners-container'}>
             {data.donorImages.map((image, index) => {
               return (
                 <Col
                   key={index}
-                  className={'text-center mt-md-4'}
+                  className={'text-center mt-md-4 partners-logo'}
                   // xs={12}
                   // sm={4}
                   // md={4}
