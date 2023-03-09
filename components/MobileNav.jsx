@@ -42,6 +42,24 @@ const MobileNav = ({active, action, display}) => {
             >
                 <Navbar.Collapse id="basic-navbar-nav" className="d-flex justify-content-center flex-column">
                 <Nav className="d-flex justify-content-start flex-column text-capitalize w-100">
+                                        
+                        <Nav.Link
+                            className="fj-navbar-item fj-navbar-link"
+                            as={() =>
+                                <Link href='/'>
+                                <a className="fj-navbar-item fj-navbar-link text-capitalize mt-2 ml-0 pt-2">
+                                    <div className={'pr-2'}>
+                                        <FontAwesomeIcon
+                                            size="1x"
+                                            icon={'house'}
+                                        /> 
+                                        &nbsp;&nbsp;Home
+                                    </div>
+                                </a>
+                                </Link>
+                            }
+                        />
+                    <span style={{border: '0', borderTop: '1px solid rgba(0,0,0,.1)'}} />
                     
                         <Nav.Link
                             className="fj-navbar-item fj-navbar-link"

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { Row, Button } from 'react-bootstrap';
+import { Row, Button, Container } from 'react-bootstrap';
 import PageLayout from 'components/PageLayout';
 import AuthorIntro from 'components/AuthorIntro';
 import FilteringMenu from 'components/FilteringMenu';
@@ -19,29 +19,38 @@ export default function Blog({ blogs }) {
 
   return (
     <PageLayout>
-      {/* <AuthorIntro /> */}
-      <FilteringMenu
-        filter={filter}
-        onChange={(option, value) =>
-          setFilter({ ...filter, [option]: value })
-        }
-      />
-      <hr />
-      <Row className="mb-5">{pages}</Row>
-      <div style={{ textAlign: 'center' }}>
-        <Button
-          onClick={loadMore}
-          disabled={isReachingEnd || isLoadingMore}
-          size="lg"
-          variant="outline-secondary"
-        >
-          {isLoadingMore
-            ? '...'
-            : isReachingEnd
-            ? 'No more blogs'
-            : 'More Blogs'}
-        </Button>
-      </div>
+      <Container>
+        <div className={'d-flex justify-content-between mt-2'}>
+          <h1>Blog Catalog</h1>
+          <div
+            className={
+              'd-flex justify-content-center align-items-center mt-2 ml-4'
+            }
+          >
+            <FilteringMenu
+              filter={filter}
+              onChange={(option, value) =>
+                setFilter({ ...filter, [option]: value })
+              }
+            />
+          </div>
+        </div>
+        <Row className="mb-5 mt-5">{pages}</Row>
+        <div style={{ textAlign: 'center' }}>
+          <Button
+            onClick={loadMore}
+            disabled={isReachingEnd || isLoadingMore}
+            size="lg"
+            variant="outline-secondary"
+          >
+            {isLoadingMore
+              ? '...'
+              : isReachingEnd
+              ? 'No more blogs'
+              : 'More Blogs'}
+          </Button>
+        </div>
+      </Container>
     </PageLayout>
   );
 }
