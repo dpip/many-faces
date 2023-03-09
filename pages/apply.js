@@ -21,7 +21,7 @@ export default function About({ apply, application, contact }) {
     <PageLayout>
       <Col>
         <Row>
-          <h1 className={'pl-3 ml-3'}>{data.title}</h1>
+          <h1 className={'pl-3'}>{data.title}</h1>
         </Row>
       </Col>
       <Container className={'mt-5 mb-5'}>

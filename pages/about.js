@@ -12,12 +12,12 @@ export default function About({ about }) {
   console.log('about data', data);
   return (
     <PageLayout>
-      <h1>{data.title}</h1>
-      <Container className={'mt-5 mb-4'}>
+      <Container className={'mt-2 mb-4 ml-1 mr-1'}>
+        <h1 className={'pb-4 mb-4'}>{data.title}</h1>
         <Row>
           <Col
             sm={12}
-            md={6}
+            md={12}
             className={'d-flex justify-content-center'}
           >
             <img
@@ -29,9 +29,11 @@ export default function About({ about }) {
               alt="Card image cap"
             />
           </Col>
+          <Col className={'pt-4 mt-3'}>
+            {data.content && <AboutContent content={data.content} />}
+          </Col>
         </Row>
       </Container>
-      {data.content && <AboutContent content={data.content} />}
       <hr />
     </PageLayout>
   );

@@ -56,7 +56,7 @@ export default function Contact({ contact }) {
               className={'d-flex text-center pt-2 pl-0'}
               style={{ flexDirection: 'column' }}
             >
-              <div className={'d-flex mr-5 mb-4'}>
+              <div className={'contact-link  d-flex mr-5 mb-4'}>
                 <a
                   className={
                     'd-flex justify-content-center align-items-center'
@@ -79,7 +79,7 @@ export default function Contact({ contact }) {
                   </div>
                 </a>
               </div>
-              <div className={'d-flex mr-5 mb-4'}>
+              <div className={'contact-link  d-flex mr-5 mb-4'}>
                 <a
                   className={
                     'd-flex justify-content-center align-items-center'
@@ -102,7 +102,7 @@ export default function Contact({ contact }) {
                   </div>
                 </a>
               </div>
-              <div className={'d-flex mr-5 mb-4'}>
+              <div className={'contact-link  d-flex mr-5 mb-4'}>
                 <a
                   className={
                     'd-flex justify-content-center align-items-center'
@@ -126,7 +126,7 @@ export default function Contact({ contact }) {
                 </a>
               </div>
               {data.instagram ? (
-                <div className={'d-flex  mb-4'}>
+                <div className={'contact-link d-flex  mb-4'}>
                   <a
                     className={
                       'd-flex justify-content-center align-items-center'
