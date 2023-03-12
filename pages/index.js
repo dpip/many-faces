@@ -68,11 +68,17 @@ export default function Home({ home, application, blogs }) {
                 <div
                   style={{ textAlign: 'center', marginRight: '1rem' }}
                 >
-                  <Link href="/donate">
+                  <a
+                    href={
+                      'https://donate.stripe.com/8wMeWJ2rK7Z37QcdQQ'
+                    }
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <Button size="lg" variant="outline-primary">
                       Donate
                     </Button>
-                  </Link>
+                  </a>
                 </div>
                 <div style={{ textAlign: 'center' }}>
                   <Link href="/apply">

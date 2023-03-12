@@ -41,7 +41,7 @@ const PageLayout = ({children, className}) => {
                 >
                  <div className={`page-wrapper ${className}`}>{children}</div>
             </motion.main>
-
+            <hr />
             <FooterMain />
         </Container>
               <style jsx global>{`

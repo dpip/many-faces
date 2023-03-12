@@ -113,7 +113,7 @@ const NavbarMain = () => {
                   style={{ textAlign: 'center'}}
                 >
                   <a
-                    href={'https://buy.stripe.com/test_bIYcOh3IjdIu2KQcMM'}
+                    href={'https://donate.stripe.com/8wMeWJ2rK7Z37QcdQQ'}
                     target="_blank"
                     rel="noopener noreferrer"
                   >

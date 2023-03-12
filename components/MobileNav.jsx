@@ -134,7 +134,7 @@ const MobileNav = ({active, action, display}) => {
 
                     <div className={'mt-5'} style={{ textAlign: 'center'}} >
                         <a
-                        href={'https://buy.stripe.com/test_bIYcOh3IjdIu2KQcMM'}
+                        href={'https://donate.stripe.com/8wMeWJ2rK7Z37QcdQQ'}
                         target="_blank"
                         rel="noopener noreferrer"
                         >

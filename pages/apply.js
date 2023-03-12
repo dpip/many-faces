@@ -96,7 +96,6 @@ export default function About({ apply, application, contact }) {
           </Col>
         </Row>
       </Container>
-      <hr />
     </PageLayout>
   );
 }
