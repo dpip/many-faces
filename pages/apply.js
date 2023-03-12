@@ -16,7 +16,6 @@ export default function About({ apply, application, contact }) {
   const [data] = apply;
   const [pdf] = application;
   const [email] = contact;
-  console.log('about data', data);
   return (
     <PageLayout>
       <Col>

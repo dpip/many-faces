@@ -22,7 +22,6 @@ const NavbarMain = () => {
     const [mobileNav, setMobileNav] = useState({active: false, display: false})
     const headerRef = useRef(null);
 
-    console.log('route', currentRoute)
     // handle scroll event
     const handleScroll = (elTopOffset, elHeight) => {
       if (window.pageYOffset > (elTopOffset + elHeight)) {

@@ -75,7 +75,7 @@ function MyApp({ Component, pageProps }) {
       minBreakpoint="xxs"
     >
       <AnimatePresence
-        exitBeforeEnter
+        mode={'wait'}
         initial={false}
         onExitComplete={() => window.scrollTo(0, 0)}
       >

@@ -16,7 +16,6 @@ const serializers = {
 };
 
 const DonateContent = ({content}) => {
-    console.log('content', content)
     return (
         <BlockContent
             blocks={content}

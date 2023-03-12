@@ -9,7 +9,6 @@ import { getAbout, urlFor } from 'lib/api';
 
 export default function About({ about }) {
   const [data] = about;
-  console.log('about data', data);
   return (
     <PageLayout>
       <Container className={'mt-2 mb-4 ml-1 mr-1'}>

@@ -17,7 +17,6 @@ const BlogDetail = ({ blog }) => {
   }
 
   if (router.isFallback) {
-    console.log('Loading fallback page');
     return (
       <PageLayout className="blog-detail-page">Loading...</PageLayout>
     );

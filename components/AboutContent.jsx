@@ -16,7 +16,6 @@ const serializers = {
 };
 
 const AboutContent = ({content}) => {
-    console.log('content', content)
     return (
         <BlockContent
             blocks={content}

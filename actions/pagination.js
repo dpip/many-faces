@@ -45,7 +45,6 @@ export const useGetBlogsPages = ({ blogs, filter }) => {
             )
           );
       }
-      console.log(paginatedBlogs);
       return paginatedBlogs.map((blog) =>
         filter.view.list ? (
           <Col key={`${blog.slug}-list`} md="9">
