@@ -39,7 +39,11 @@ export default function About({ apply, application, contact }) {
               alt="Card image cap"
             />
           </Col>
-          <Col sm={12} md={6} className={'mt-4 mt-md-0'}>
+          <Col
+            sm={12}
+            md={6}
+            className={'mt-4 mt-md-0 ml-3 mr-3 ml-md-0 mr-md-0'}
+          >
             <Row>
               {data.content && (
                 <ApplyContent content={data.content} />
