@@ -3,7 +3,8 @@ import '@fortawesome/fontawesome-svg-core/styles.css';
 import 'react-toggle/style.css';
 import 'styles/index.scss';
 import 'styles/navbar.scss';
-import { AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useRouter } from 'next/router';
 
 import ThemeProvider from 'providers/ThemeProvider';
 
@@ -60,6 +61,7 @@ library.add(
 );
 
 function MyApp({ Component, pageProps }) {
+  const router = useRouter();
   return (
     <ThemeProvider
       breakPoints={[
@@ -74,12 +76,32 @@ function MyApp({ Component, pageProps }) {
       ]}
       minBreakpoint="xxs"
     >
-      <AnimatePresence
-        mode={'wait'}
-        initial={false}
-        onExitComplete={() => window.scrollTo(0, 0)}
-      >
-        <Component {...pageProps} />
+      <AnimatePresence exitBeforeEnter>
+        <motion.div
+          key={router.route}
+          initial="initialState"
+          animate="animateState"
+          exit="exitState"
+          transition={{
+            duration: 0.75,
+          }}
+          variants={{
+            initialState: {
+              opacity: 0,
+              clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)',
+            },
+            animateState: {
+              opacity: 1,
+              clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)',
+            },
+            exitState: {
+              clipPath: 'polygon(50% 0, 50% 0, 50% 100%, 50% 100%)',
+            },
+          }}
+          className="base-page-size"
+        >
+          <Component {...pageProps} />
+        </motion.div>
       </AnimatePresence>
     </ThemeProvider>
   );
