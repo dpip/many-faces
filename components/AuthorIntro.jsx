@@ -16,7 +16,7 @@ const AuthorIntro = () => {
             />
             <Media.Body>
               <h5 className="font-weight-bold mb-0">
-                Hey! I'm Brian Quin, Owner of On the Lash Brewing Co.
+                Hey! I am Brian Quin, Owner of On the Lash Brewing Co.
               </h5>
               <p className="welcome-text">
                 Interested in applying to the program, donating, or learning more about things over a beer? Email is the most efficient way to get in touch but feel free to reach out on social media or other means!
