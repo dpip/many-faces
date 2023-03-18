@@ -76,8 +76,9 @@ function MyApp({ Component, pageProps }) {
       ]}
       minBreakpoint="xxs"
     >
-      <AnimatePresence exitBeforeEnter>
-        <motion.div
+      {/* clip paths are temporarily commented out until further design decisions */}
+      <AnimatePresence mode="wait">
+        {/* <motion.div
           key={router.route}
           initial="initialState"
           animate="animateState"
@@ -99,9 +100,9 @@ function MyApp({ Component, pageProps }) {
             },
           }}
           className="base-page-size"
-        >
-          <Component {...pageProps} />
-        </motion.div>
+        > */}
+        <Component {...pageProps} />
+        {/* </motion.div> */}
       </AnimatePresence>
     </ThemeProvider>
   );

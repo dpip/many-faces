@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
+import { useRouter } from 'next/router'
 import {
   Navbar,
   Nav,
@@ -13,6 +14,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const MobileNav = ({active, action, display}) => {
     const { theme, toggleTheme } = useTheme();
+    const router = useRouter()
+    const currentRoute = router.pathname
 
     return (
         <Container className={`mobile-nav ${active ? 'mobile-nav-active' : 'mobile-nav-nonactive'}`} style={{display: `${display ? 'block' : 'none'}`}}>
@@ -47,7 +50,7 @@ const MobileNav = ({active, action, display}) => {
                             className="fj-navbar-item fj-navbar-link"
                             as={() =>
                                 <Link href='/'>
-                                <a className="fj-navbar-item fj-navbar-link text-capitalize mt-2 ml-0 pt-2">
+                                <a className={`fj-navbar-item fj-navbar-link text-capitalize mt-2 ml-0 pt-2 mr-0 ${currentRoute === '/' ? 'activeRoute' : ''}`}>
                                     <div className={'pr-2'}>
                                         <FontAwesomeIcon
                                             size="1x"
@@ -65,7 +68,7 @@ const MobileNav = ({active, action, display}) => {
                             className="fj-navbar-item fj-navbar-link"
                             as={() =>
                                 <Link href='/apply'>
-                                <a className="fj-navbar-item fj-navbar-link text-capitalize mt-2 ml-0 pt-2">
+                                <a className={`fj-navbar-item fj-navbar-link text-capitalize mt-2 ml-0 pt-2 mr-0 ${currentRoute === '/apply' ? 'activeRoute' : ''}`}>
                                     <div className={'pr-2'}>
                                         <FontAwesomeIcon
                                             size="1x"
@@ -83,7 +86,7 @@ const MobileNav = ({active, action, display}) => {
                             className="fj-navbar-item fj-navbar-link"
                             as={() =>
                                 <Link href='/about'>
-                                <a className="fj-navbar-item fj-navbar-link text-capitalize mt-2 ml-0 d-flex align-items-center pt-2">
+                                <a className={`fj-navbar-item fj-navbar-link text-capitalize mt-2 ml-0 d-flex align-items-center pt-2 mr-0 ${currentRoute === '/about' ? 'activeRoute' : ''}`}>
                                     <div className={'pr-1'}>
                                         <FontAwesomeIcon
                                             size="1x"
@@ -101,7 +104,7 @@ const MobileNav = ({active, action, display}) => {
                             className="fj-navbar-item fj-navbar-link"
                             as={() =>
                                 <Link href='/blog'>
-                                <a className="fj-navbar-item fj-navbar-link text-capitalize mt-2 ml-0 d-flex align-items-center pt-2">
+                                <a className={`fj-navbar-item fj-navbar-link text-capitalize mt-2 ml-0 d-flex align-items-center pt-2 mr-0 ${currentRoute === '/blog' ? 'activeRoute' : ''}`}>
                                     <div className={'pr-1'}>
                                         <FontAwesomeIcon
                                             size="1x"
@@ -118,7 +121,7 @@ const MobileNav = ({active, action, display}) => {
                             className="fj-navbar-item fj-navbar-link"
                             as={() =>
                                 <Link href='/contact'>
-                                <a className="fj-navbar-item fj-navbar-link text-capitalize mt-2 ml-0 d-flex align-items-center pt-2">
+                                <a className={`fj-navbar-item fj-navbar-link text-capitalize mt-2 ml-0 d-flex align-items-center pt-2 mr-0 ${currentRoute === '/contact' ? 'activeRoute' : ''}`}>
                                     <div className={'pr-0'}>
                                         <FontAwesomeIcon
                                             size="1x"
