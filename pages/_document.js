@@ -28,7 +28,7 @@ export default function Document() {
           href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap"
           rel="stylesheet"
         />
-        <link rel="shortcut icon" href="/images/favicon.ico" />
+        <link rel="shortcut icon" href="/favicon.ico" />
       </Head>
       <body>
         <Main />
