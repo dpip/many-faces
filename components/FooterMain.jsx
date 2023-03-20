@@ -1,13 +1,15 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
+import footerImg from './../assets/images/footer.png';
+
 const FooterMain = () => {
     return (
         <footer className="page-footer d-flex justify-content-between align-items-center pb-4 pt-3 flex-column flex-md-row">
             <div>
                 <Link href="/">
                     <a>
-                        <Image src={'/footer.png'} alt="Many Faces" width="42" height="42" />
+                        <Image src={footerImg || '/footer.png'} alt="Many Faces" width="42" height="42" />
                     </a>
                 </Link>
               </div>
