@@ -12,6 +12,8 @@ import MobileNav from 'components/MobileNav'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { getDonate, urlFor } from 'lib/api';
 
+import navImg from './../public/horizontal-nav.png';
+
 const NavbarMain = () => {
     // TODO - using donate data from static props returns theme props instead of fetched data from donate schema.
     // Look into parent props
@@ -66,7 +68,7 @@ const NavbarMain = () => {
             <Navbar.Brand className="fj-navbar-brand d-flex align-items-center" style={{cursor: 'pointer'}}>
               <Link href="/">
                 <a style={{display: 'flex', justifyContent: 'center'}}>
-                  <Image src="/horizontal-nav.png" alt="Many Faces" width="180" height="24" />
+                  <Image src={navImg || '/horizontal-nav.png'} alt="Many Faces" width="180" height="24" />
                 </a>   
               </Link>
             </Navbar.Brand>
