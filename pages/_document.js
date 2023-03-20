@@ -10,7 +10,7 @@ export default function Document() {
         <link
           rel="shortcut icon"
           type="image/x-icon"
-          href="/favicon.ico"
+          href="favicon.ico"
         />
         <meta property="og:url" content="your url" />
         <meta property="og:type" content="website" />
