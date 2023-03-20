@@ -5,8 +5,8 @@ import { Html, Head, Main, NextScript } from 'next/document';
 export default function Document() {
   return (
     <Html>
+      <title>The Many Faces Initiative</title>
       <Head>
-        <title>The Many Faces Initiative</title>
         <meta property="og:url" content="your url" />
         <meta property="og:type" content="website" />
         <meta property="fb:app_id" content="your fb app id" />
@@ -30,8 +30,8 @@ export default function Document() {
           href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap"
           rel="stylesheet"
         />
-        <link rel="shortcut icon" href="/favicon.ico" />
       </Head>
+      <link rel="shortcut icon" href="/favicon.ico" />
       <body>
         <Main />
         <NextScript />
