@@ -7,7 +7,7 @@ export default function Document() {
     <Html>
       <title>The Many Faces Initiative</title>
       <Head>
-        <link rel="shortcut icon" href="/images/favicon.ico" />
+        <link rel="shortcut icon" href="/favicon.ico" />
         <meta property="og:url" content="your url" />
         <meta property="og:type" content="website" />
         <meta property="fb:app_id" content="your fb app id" />
