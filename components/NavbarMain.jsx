@@ -12,7 +12,7 @@ import MobileNav from 'components/MobileNav'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { getDonate, urlFor } from 'lib/api';
 
-import navImg from './../public/horizontal-nav.png';
+import navImg from './../assets/images/horizontal-nav.png';
 
 const NavbarMain = () => {
     // TODO - using donate data from static props returns theme props instead of fetched data from donate schema.
