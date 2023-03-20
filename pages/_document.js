@@ -30,8 +30,8 @@ export default function Document() {
           href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap"
           rel="stylesheet"
         />
+        <link rel="icon" type="image/x-icon" href="/favicon.png" />
       </Head>
-      <link rel="shortcut icon" href="/favicon.ico" />
       <body>
         <Main />
         <NextScript />
