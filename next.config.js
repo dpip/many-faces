@@ -5,6 +5,9 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  images: {
+    domains: ['https://many-faces.vercel.app/'],
+  },
 };
 
 module.exports = {
