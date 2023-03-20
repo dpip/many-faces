@@ -66,7 +66,7 @@ const NavbarMain = () => {
             <Navbar.Brand className="fj-navbar-brand d-flex align-items-center" style={{cursor: 'pointer'}}>
               <Link href="/">
                 <a style={{display: 'flex', justifyContent: 'center'}}>
-                  <Image src="/ManyFaces-nav.png" alt="Many Faces" width="180" height="24" />
+                  <Image src="/horizontal-nav.png" alt="Many Faces" width="180" height="24" />
                 </a>   
               </Link>
             </Navbar.Brand>

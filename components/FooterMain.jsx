@@ -7,7 +7,7 @@ const FooterMain = () => {
             <div>
                 <Link href="/">
                     <a>
-                        <Image src={'/ManyFaces_Initiative_Logo_ICON.png'} alt="Many Faces" width="42" height="42" />
+                        <Image src={'/footer.png'} alt="Many Faces" width="42" height="42" />
                     </a>
                 </Link>
               </div>
