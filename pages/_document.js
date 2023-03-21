@@ -22,7 +22,7 @@ export default function Document() {
         <meta name="twitter:card" content="summary" />
         <meta
           property="og:description"
-          content="Hurray!! Yes Social Media Preview is Working"
+          content="DEI Internship in Craft Brewing"
         />
         <meta property="og:image" content={'url of image'} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
