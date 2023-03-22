@@ -10,14 +10,20 @@ export default function Document() {
           type="image/x-icon"
           href="/images/favicon.ico"
         />
-        <meta property="og:url" content="your url" />
+        <meta
+          property="og:url"
+          content="https://manyfacesinitiative.com/"
+        />
         <meta property="og:type" content="website" />
         <meta property="fb:app_id" content="your fb app id" />
         <meta
           property="og:title"
           content="The Many Faces Initiative"
         />
-        <meta name="twitter:card" content="summary" />
+        <meta
+          name="twitter:card"
+          content="DEI Internship in Craft Brewing"
+        />
         <meta
           property="og:description"
           content="DEI Internship in Craft Brewing"
