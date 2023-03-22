@@ -1,17 +1,18 @@
 import { Html, Head, Main, NextScript } from 'next/document';
 
-// import faviconImg from './../assets/images/favicon.ico';
+import HeadDetails from '../components/HeadDeatails';
 
 export default function Document() {
   return (
     <Html>
       <title>The Many Faces Initiative</title>
       <Head>
-        <link
+        {/* <link
           rel="shortcut icon"
           type="image/x-icon"
-          href="favicon.ico"
-        />
+          href="/favicon.ico"
+        /> */}
+        <HeadDetails />
         <meta property="og:url" content="your url" />
         <meta property="og:type" content="website" />
         <meta property="fb:app_id" content="your fb app id" />
