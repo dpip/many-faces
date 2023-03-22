@@ -248,5 +248,6 @@ export async function getStaticProps() {
       application,
       blogs,
     },
+    revalidate: 10,
   };
 }
