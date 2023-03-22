@@ -263,5 +263,6 @@ export async function getStaticProps() {
     props: {
       contact,
     },
+    revalidate: 10,
   };
 }
