@@ -22,7 +22,7 @@ export default function Document() {
           property="og:description"
           content="DEI Internship in Craft Brewing"
         />
-        <meta property="og:image" content={'url of image'} />
+        <meta property="og:image" content={'/images/favicon.ico'} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
