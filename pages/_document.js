@@ -1,7 +1,5 @@
 import { Html, Head, Main, NextScript } from 'next/document';
 
-import HeadDetails from '../components/HeadDetails';
-
 export default function Document() {
   return (
     <Html>
@@ -12,13 +10,12 @@ export default function Document() {
           type="image/x-icon"
           href="/images/favicon.ico"
         />
-        {/* <HeadDetails /> */}
         <meta property="og:url" content="your url" />
         <meta property="og:type" content="website" />
         <meta property="fb:app_id" content="your fb app id" />
         <meta
           property="og:title"
-          content="Social Media Preview Working?"
+          content="The Many Faces Initiative"
         />
         <meta name="twitter:card" content="summary" />
         <meta
