@@ -61,7 +61,11 @@ export default function Blog({ blogs }) {
             <p className={'pt-4 mt-4 pb-4 mb-4'}>
               We recently launched manyfacesinitiative.com and are
               planning on posting content ASAP. In the meantime{' '}
-              <a target="_blank" rel="noopener noreferrer" href={''}>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href={'https://www.facebook.com/manyfacesinitiative'}
+              >
                 follow us on facebook
               </a>{' '}
               or check out our{' '}
@@ -72,7 +76,7 @@ export default function Blog({ blogs }) {
                   'https://www.facebook.com/MyPBSNC/videos/3403972159821678'
                 }
               >
-                most recent feature on PBS' ncImpact
+                most recent feature on PBS ncImpact
               </a>
               .
             </p>
