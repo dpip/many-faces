@@ -16,8 +16,8 @@ import { useGetBlogsPages } from 'actions/pagination';
 
 export default function Home({ home, application, blogs }) {
   const [data] = home;
-  const [apply] = application;
-  const [testimonials] = blogs;
+  // const [apply] = application;
+  // const [testimonials] = blogs;
   const [filter, setFilter] = useState({
     view: { list: 0 },
     date: { asc: 0 },
