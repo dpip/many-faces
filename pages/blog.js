@@ -64,19 +64,11 @@ export default function Blog({ blogs }) {
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                href={'https://www.facebook.com/manyfacesinitiative'}
-              >
-                follow us on facebook
-              </a>{' '}
-              or check out our{' '}
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
                 href={
-                  'https://www.facebook.com/MyPBSNC/videos/3403972159821678'
+                  'https://www.facebook.com/moffettcraftarts.frameableart/'
                 }
               >
-                most recent feature on PBS ncImpact
+                follow on facebook
               </a>
               .
             </p>

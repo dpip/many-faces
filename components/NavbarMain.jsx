@@ -68,17 +68,17 @@ const NavbarMain = () => {
             <Navbar.Brand className="fj-navbar-brand d-flex align-items-center" style={{cursor: 'pointer'}}>
               <Link href="/">
                 <a style={{display: 'flex', justifyContent: 'center'}}>
-                  <Image src={navImg || '/horizontal-nav.png'} alt="Many Faces" width="180" height="24" />
+                  <h3 className={'m-0'}>Logo</h3>
                 </a>   
               </Link>
             </Navbar.Brand>
-            <Navbar.Collapse id="basic-navbar-nav" className="d-sm-none d-lg-flex justify-content-center">
+            <Navbar.Collapse id="basic-navbar-nav" className="d-sm-none d-lg-flex justify-content-end">
               <Nav className="text-capitalize">
                   <Nav.Link
                   className={`fj-navbar-item fj-navbar-link`}
                   as={() =>
                     <Link href='/apply'>
-                      <a className={`fj-navbar-item fj-navbar-link text-capitalize ${currentRoute === '/apply' ? 'activeRoute' : ''}`}>Apply</a>
+                      <a className={`fj-navbar-item fj-navbar-link text-capitalize ${currentRoute === '/apply' ? 'activeRoute' : ''}`}>Gallery</a>
                     </Link>
                   }
                   />
@@ -109,7 +109,7 @@ const NavbarMain = () => {
               </Nav>
             </Navbar.Collapse>
             <div className={'d-flex justify-content-center align-items-center'}>
-              <span className={'d-none d-lg-flex'} style={{ textAlign: 'center' }}>
+              {/* <span className={'d-none d-lg-flex'} style={{ textAlign: 'center' }}>
                 <div
                   style={{ textAlign: 'center'}}
                 >
@@ -123,7 +123,7 @@ const NavbarMain = () => {
                     </Button>
                   </a>
                 </div>
-              </span>
+              </span> */}
               <span className={'d-flex d-lg-none'}>
                 <Button
                   className={'mobile-nav-menu-toggle'}

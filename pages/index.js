@@ -76,14 +76,14 @@ export default function Home({ home, application, blogs }) {
                     rel="noopener noreferrer"
                   >
                     <Button size="lg" variant="outline-primary">
-                      Donate
+                      Gallery
                     </Button>
                   </a>
                 </div>
                 <div style={{ textAlign: 'center' }}>
                   <Link href="/apply">
                     <Button size="lg" variant="outline-secondary">
-                      Apply
+                      About
                     </Button>
                   </Link>
                 </div>
@@ -110,7 +110,7 @@ export default function Home({ home, application, blogs }) {
               <div style={{ textAlign: 'center' }}>
                 <Link href="/about">
                   <Button size="lg" variant="outline-secondary">
-                    More about the initiative
+                    More about Moffett Craft
                   </Button>
                 </Link>
               </div>
@@ -118,7 +118,7 @@ export default function Home({ home, application, blogs }) {
           </Row>
         </Container>
         {/* DONORS SECTION */}
-        <Container>
+        {/* <Container>
           <Row>
             <Col className={'text-center pt-2 mt-5'}>
               <h4>{data.donorsTitle}</h4>
@@ -150,7 +150,7 @@ export default function Home({ home, application, blogs }) {
               );
             })}
           </Row>
-        </Container>
+        </Container> */}
         {/* <Container className={'pt-2 pb-4 mb-4'}>
           <Row>
             <Col className={'text-center'}>

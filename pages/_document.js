@@ -3,7 +3,7 @@ import { Html, Head, Main, NextScript } from 'next/document';
 export default function Document() {
   return (
     <Html>
-      <title>The Many Faces Initiative</title>
+      <title>Moffett Craft</title>
       <Head>
         <link
           rel="shortcut icon"
@@ -12,21 +12,18 @@ export default function Document() {
         />
         <meta
           property="og:url"
-          content="https://manyfacesinitiative.com/"
+          content="https://moffettcraftarts.com/"
         />
         <meta property="og:type" content="website" />
         <meta property="fb:app_id" content="your fb app id" />
-        <meta
-          property="og:title"
-          content="The Many Faces Initiative"
-        />
+        <meta property="og:title" content="Moffett Craft" />
         <meta
           name="twitter:card"
-          content="DEI Internship in Craft Brewing"
+          content="Portfolio by Laura Moffett Myers"
         />
         <meta
           property="og:description"
-          content="DEI Internship in Craft Brewing"
+          content="Portfolio by Laura Moffett Myers"
         />
         <meta property="og:image" content={'/images/favicon.ico'} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
