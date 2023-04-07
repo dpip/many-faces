@@ -4,17 +4,17 @@ import { Row, Button, Container } from 'react-bootstrap';
 import PageLayout from 'components/PageLayout';
 import FilteringMenu from 'components/FilteringMenu';
 
-import { useGetBlogsPages } from 'actions/pagination';
-import { getPaginatedBlogs } from 'lib/api';
+import { useGetGalleryPages } from 'actions/pagination';
+import { getPaginatedGallery } from 'lib/api';
 
-export default function Gallery({ blogs }) {
+export default function Gallery({ gallery }) {
   const [filter, setFilter] = useState({
     view: { list: 0 },
     date: { asc: 0 },
   });
 
   const { pages, isLoadingMore, isReachingEnd, loadMore } =
-    useGetBlogsPages({ blogs, filter });
+    useGetGalleryPages({ gallery, filter });
 
   return (
     <PageLayout>
@@ -34,7 +34,7 @@ export default function Gallery({ blogs }) {
             />
           </div>
         </div>
-        {blogs.length > 0 ? (
+        {gallery.length > 0 ? (
           <>
             <Row className="mb-5 mt-5">{pages}</Row>
             <div style={{ textAlign: 'center' }}>
@@ -47,8 +47,8 @@ export default function Gallery({ blogs }) {
                 {isLoadingMore
                   ? '...'
                   : isReachingEnd
-                  ? 'No more blogs'
-                  : 'More Blogs'}
+                  ? 'No more art'
+                  : 'More art'}
               </Button>
             </div>
           </>
@@ -77,10 +77,13 @@ export default function Gallery({ blogs }) {
 }
 
 export async function getStaticProps() {
-  const blogs = await getPaginatedBlogs({ offset: 0, date: 'desc' });
+  const gallery = await getPaginatedGallery({
+    offset: 0,
+    date: 'desc',
+  });
   return {
     props: {
-      blogs,
+      gallery,
     },
     revalidate: 10,
   };

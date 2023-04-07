@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
 import { useSWRPages } from 'swr';
-import { useGetBlogs } from 'actions';
+import { useGetGallery } from 'actions';
 import { Col } from 'react-bootstrap';
 import CardItem from 'components/CardItem';
 import CardItemBlank from 'components/CardItemBlank';
@@ -9,7 +9,7 @@ import CardListItem from 'components/CardListItem';
 import CardListItemBlank from 'components/CardListItemBlank';
 import moment from 'moment';
 
-export const useGetBlogsPages = ({ blogs, filter }) => {
+export const useGetGalleryPages = ({ gallery, filter }) => {
   useEffect(() => {
     window.__pagination__init = true;
   }, []);
@@ -17,7 +17,7 @@ export const useGetBlogsPages = ({ blogs, filter }) => {
   return useSWRPages(
     'index-page',
     ({ offset, withSWR }) => {
-      let initialData = !offset && blogs;
+      let initialData = !offset && gallery;
 
       if (
         typeof window !== 'undefined' &&
@@ -26,11 +26,11 @@ export const useGetBlogsPages = ({ blogs, filter }) => {
         initialData = null;
       }
 
-      const { data: paginatedBlogs } = withSWR(
-        useGetBlogs({ offset, filter }, initialData)
+      const { data: paginatedGallery } = withSWR(
+        useGetGallery({ offset, filter }, initialData)
       );
 
-      if (!paginatedBlogs) {
+      if (!paginatedGallery) {
         return Array(3)
           .fill(0)
           .map((_, i) =>
@@ -45,7 +45,7 @@ export const useGetBlogsPages = ({ blogs, filter }) => {
             )
           );
       }
-      return paginatedBlogs.map((blog) =>
+      return paginatedGallery.map((blog) =>
         filter.view.list ? (
           <Col key={`${blog.slug}-list`} md="9">
             <CardListItem
@@ -54,8 +54,8 @@ export const useGetBlogsPages = ({ blogs, filter }) => {
               subtitle={blog.subtitle}
               date={moment(blog.date).format('LL')}
               link={{
-                href: '/blogs/[slug]',
-                as: `/blogs/${blog.slug}`,
+                href: '/gallery/[slug]',
+                as: `/gallery/${blog.slug}`,
               }}
             />
           </Col>
@@ -68,8 +68,8 @@ export const useGetBlogsPages = ({ blogs, filter }) => {
               date={moment(blog.date).format('LL')}
               image={blog.coverImage}
               link={{
-                href: '/blogs/[slug]',
-                as: `/blogs/${blog.slug}`,
+                href: '/gallery/[slug]',
+                as: `/gallery/${blog.slug}`,
               }}
             />
           </Col>
