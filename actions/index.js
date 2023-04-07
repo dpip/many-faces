@@ -19,3 +19,15 @@ export const useGetBlogs = ({ offset, filter }, initialData) => {
     }
   );
 };
+
+export const useGetGallery = ({ offset, filter }, initialData) => {
+  return useSWR(
+    `/api/blogs?offset=${offset || 0}&date=${
+      filter.date.asc ? 'asc' : 'desc'
+    }`,
+    fetcher,
+    {
+      initialData,
+    }
+  );
+};

@@ -77,8 +77,8 @@ const NavbarMain = () => {
                   <Nav.Link
                   className={`fj-navbar-item fj-navbar-link`}
                   as={() =>
-                    <Link href='/apply'>
-                      <a className={`fj-navbar-item fj-navbar-link text-capitalize ${currentRoute === '/apply' ? 'activeRoute' : ''}`}>Gallery</a>
+                    <Link href='/gallery'>
+                      <a className={`fj-navbar-item fj-navbar-link text-capitalize ${currentRoute === '/gallery' ? 'activeRoute' : ''}`}>Gallery</a>
                     </Link>
                   }
                   />
