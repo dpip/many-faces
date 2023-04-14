@@ -128,7 +128,7 @@ export const useGetGalleryPages = ({ gallery, filter }) => {
       }
       return paginatedGallery.map((art) =>
         filter.view.list ? (
-          <Col key={`${blog.slug}-list`} md="9">
+          <Col key={`${art.slug}-list`} md="9">
             <CardListItem
               author={art.author}
               title={art.title}
